@@ -450,5 +450,230 @@ head(GasterosteusAculeatus.PhyloMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` of the aforementioned species from [Neme and Tautz, 2013](http://www.biomedcentral.com/1471-2164/14/117) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+## [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](http://mbe.oxfordjournals.org/content/32/2/299.short)
+
+__Title__: _Phylostratigraphic Profiles in Zebrafish Uncover Chordate Origins of the Vertebrate Brain_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Danio rerio_ (zebrafish) and _Drosophila melanogaster_
+- __E-value cutoff__: 1E-3 (blastp; protein sequences) and 1E-15 (tblastn; ESTs) 
+- __Sequence type__: Protein Sequences and ESTs
+- __Reference data bases__: NCBI nr (protein); trace and EST archives (EST)
+- __Splice variants__: always using the longest splice variant
+
+
+Download Map using R:
+
+```r
+# download the Phylostratigraphic Map of Danio rerio
+# from Šestak and Domazet-Lošo, 2015
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx", 
+               destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
+               
+
+# download the Phylostratigraphic Map of Drosophila melanogaster
+# from Šestak and Domazet-Lošo, 2015
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx", 
+               destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
+    
+```
+
+Read the `*.xlsx` file storing the `Phylostratigraphic Map` of _D. rerio_ and _D. melanogaster_ and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# install the readxl package
+install.packages("readxl")
+
+# load package readxl
+library(readxl)
+
+# read the excel file
+DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", sheet = 1, skip = 4)
+
+# format Phylostratigraphic Map for use with myTAI
+Drerio.PhyloMap <- DrerioPhyloMap.MBEa[ , 1:2]
+
+# have a look at the final format
+head(Drerio.PhyloMap)
+```
+
+```
+  Phylostrata            ZFIN_ID
+1           1 ZDB-GENE-000208-13
+2           1 ZDB-GENE-000208-17
+3           1 ZDB-GENE-000208-18
+4           1 ZDB-GENE-000208-23
+5           1  ZDB-GENE-000209-3
+6           1  ZDB-GENE-000209-4
+```
+
+```r
+# read the excel file
+DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", sheet = 1, skip = 4)
+
+# format Phylostratigraphic Map for use with myTAI
+Dmelanogaster.PhyloMap <- DmelanogasterPhyloMap.MBEa[ , 1:2]
+
+# have a look at the final format
+head(Dmelanogaster.PhyloMap)
+```
+
+```
+  Phylostrata FlyBase_Gene_ID
+1           1     FBgn0000017
+2           1     FBgn0000024
+3           1     FBgn0000032
+4           1     FBgn0000036
+5           1     FBgn0000038
+6           1     FBgn0000039
+```
+
+Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` of the aforementioned species from [Šestak and Domazet-Lošo, 2015](http://mbe.oxfordjournals.org/content/32/2/299.short) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
+
+
+## [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](http://mbe.oxfordjournals.org/content/32/5/1221.short?rss=1)
+
+__Title__: _Evidence for Active Maintenance of Phylotranscriptomic Hourglass Patterns in Animal and Plant Embryogenesis_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Danio rerio_ (zebrafish), _Drosophila melanogaster_ (fly), and _Arabidopsis thaliana_
+- __E-value cutoff__: 1E-5 (blastp; protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: NCBI nr (protein) + custom selection of genomes (phytozome, flybase)
+- __Splice variants__: always using the longest splice variant
+
+Published `Divergence Maps`:
+
+- __Organisms__: _Arabidopsis thaliana_ versus _Arabidopsis lyrata_; _Arabidopsis thaliana_ versus _Brassica rapa_; _Arabidopsis thaliana_ versus _Capsella rubella_; _Arabidopsis thaliana_ versus _Thelungiella halophila_; _Danio rerio_ versus ... ; _Danio rerio_ versus ...; _Danio rerio_ versus ... ; _Danio rerio_ versus ... ; _Drosophila melanogaster_ versus ... ; _Drosophila melanogaster_ versus ... ; _Drosophila melanogaster_ versus ... ; _Drosophila melanogaster_ versus ... ;
+- __E-value cutoff__: 1E-5 (blastp - best reciprocal hit; protein sequences) 
+- __Sequence type__: CDS + Protein Sequences
+
+Download Maps using R:
+
+```r
+# download the Phylostratigraphic Maps
+# from Drost et al., 2015
+download.file( url      = "http://files.figshare.com/1798295/Supplementary_table_S2.xls", 
+               destfile = "MBE_2015b_PhyloMaps.xls" )
+               
+               
+# download the Divergence Maps
+download.file( url      = "http://files.figshare.com/1798297/Supplementary_table_S4.xls", 
+               destfile = "MBE_2015b_DivergenceMaps.xls" )
+    
+```
+
+Read the `*.xls` file storing the `Phylostratigraphic Maps` and `Divergence Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# install the readxl package
+install.packages("readxl")
+
+# load package readxl
+library(readxl)
+
+# read the excel file
+DrerioPhyloMap.MBEb <- read_excel("MBE_2015b_PhyloMaps.xls", sheet = 1)
+
+# have a look at the final format
+head(DrerioPhyloMap.MBEb)
+```
+
+```
+  Phylostratum             GeneID
+1            1 ENSDARG00000000002
+2            1 ENSDARG00000000019
+3            1 ENSDARG00000000102
+4            1 ENSDARG00000000241
+5            1 ENSDARG00000000324
+6            1 ENSDARG00000000369
+```
+
+```r
+# load package readxl
+library(readxl)
+
+# read the excel file
+DmelanogasterPhyloMap.MBEb <- read_excel("MBE_2015b_PhyloMaps.xls", sheet = 2)
+
+# have a look at the final format
+head(DmelanogasterPhyloMap.MBEb)
+```
+
+```
+  Phylostratum      GeneID
+1            1 fbpp0070006
+2            1 fbpp0070025
+3            1 fbpp0070051
+4            1 fbpp0070054
+5            1 fbpp0070061
+6            1 fbpp0070064
+```
+
+```r
+# load package readxl
+library(readxl)
+
+# read the excel file
+Athaliana.MBEb <- read_excel("MBE_2015b_PhyloMaps.xls", sheet = 3)
+
+# have a look at the final format
+head(Athaliana.MBEb)
+```
+
+```
+  Phylostratum      GeneID
+1            1 at1g01040.2
+2            1 at1g01050.1
+3            1 at1g01070.1
+4            1 at1g01080.2
+5            1 at1g01090.1
+6            1 at1g01120.1
+```
+
+```r
+# load package readxl
+library(readxl)
+
+# Danio rerio
+
+# D. rerio vs. A. mexicanus
+Drerio_vs_Amex_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 9)
+# D. rerio vs. F. rubripes
+Drerio_vs_Frubripes_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 10)
+# D. rerio vs. X. maculatus
+Drerio_vs_Xmac_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 11)
+# D. rerio vs. G. morhua
+Drerio_vs_Gmor_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 12)
+
+
+
+# Drosophila melanogaster
+
+# D. melanogaster vs. D. simulans
+Dmel_Dsim_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 1)
+# D. melanogaster vs. D. yakuba
+Dmel_Dyak_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 2)
+# D. melanogaster vs. D. persimilis
+Dmel_Dper_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 3)
+# D. melanogaster vs. D. virilis
+Dmel_Dvir_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 4)
+
+
+
+# Arabidopsis thaliana
+
+# A. thaliana vs A. lyrata
+Ath_Aly_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 5)
+# A thaliana vs. T. halophila
+Ath_Brapa_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 8)
+# A thaliana vs. C. rubella
+Ath_Crub_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 7)
+# A thaliana vs. C. papaya 
+Ath_Cpapaya_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls",sheet = 6)
+
+```
 
 

@@ -546,7 +546,7 @@ Published `Phylostratigraphic Map`:
 
 Published `Divergence Maps`:
 
-- __Organisms__: _Arabidopsis thaliana_ versus _Arabidopsis lyrata_; _Arabidopsis thaliana_ versus _Brassica rapa_; _Arabidopsis thaliana_ versus _Capsella rubella_; _Arabidopsis thaliana_ versus _Thelungiella halophila_; _Danio rerio_ versus ... ; _Danio rerio_ versus ...; _Danio rerio_ versus ... ; _Danio rerio_ versus ... ; _Drosophila melanogaster_ versus ... ; _Drosophila melanogaster_ versus ... ; _Drosophila melanogaster_ versus ... ; _Drosophila melanogaster_ versus ... ;
+- __Organisms__: _Arabidopsis thaliana_ versus _Arabidopsis lyrata_; _Arabidopsis thaliana_ versus _Brassica rapa_; _Arabidopsis thaliana_ versus _Capsella rubella_; _Arabidopsis thaliana_ versus _Thelungiella halophila_; _Danio rerio_ versus _A. mexicanus_ ; _Danio rerio_ versus _F. rubripes_; _Danio rerio_ versus _X. maculatus_ ; _Danio rerio_ versus _G. morhua_ ; _Drosophila melanogaster_ versus _D. simulans_ ; _Drosophila melanogaster_ versus _D. yakuba_ ; _Drosophila melanogaster_ versus _D. persimilis_ ; _Drosophila melanogaster_ versus _D. virilis_ ;
 - __E-value cutoff__: 1E-5 (blastp - best reciprocal hit; protein sequences) 
 - __Sequence type__: CDS + Protein Sequences
 
@@ -691,16 +691,81 @@ Published `Phylostratigraphic Map`:
 - __Reference data bases__: NCBI nr (protein) + custom selection of genomes
 - __Splice variants__: always using the longest splice variant
 
-Download `Phylostratigraphic Map` in R:
+Download `Phylostratigraphic Map` and `KaKsMaps` in R:
+
+```r
+# download the Phylostratigraphic Map of Coprinopsis cinerea
+# from Cheng et al., 2015
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx", 
+               destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
+               
+```
+
+Read the `*.xls` file storing the `Phylostratigraphic Maps` and `Divergence Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
 
 ```r
 # load package readxl
 library(readxl)
 
-# Coprinopsis cinerea
+# Coprinopsis cinerea Phylostratigraphic Map
 
+CcinereaPhyloMap.MBEc <- read_excel("MBE_2015c_Ccinerea_Maps.xlsx", sheet = 2)
 
+Ccinerea.PhyloMap <- CcinereaPhyloMap.MBEc[ , c(4,1)]
+
+colnames(Ccinerea.PhyloMap) <- c("Phylostratum", "GeneID")
+
+# have a look at the final format
+head(Ccinerea.PhyloMap)
 
 ```
+
+```
+  Phylostratum     GeneID
+1           10 CC1G_00004
+2            4 CC1G_00007
+3            3 CC1G_00011
+4            2 CC1G_00012
+5            3 CC1G_00013
+6            2 CC1G_00014
+
+```
+
+```r
+# load package readxl
+library(readxl)
+
+# Coprinopsis cinerea KaKs Maps
+
+CcinereaKaKsMaps.MBEc <- read_excel("MBE_2015c_Ccinerea_Maps.xlsx", sheet = 3, skip = 1)
+
+# Coprinopsis cinerea versus Agaricus bisporus var bisporus H97
+Ccin_vs_Abisp.KaKsMap <- CcinereaKaKsMaps.MBEc[ , c(2,1)]
+
+# Coprinopsis cinerea versus Laccaria bicolor
+Ccin_vs_Lbicol.KaKsMap <- CcinereaKaKsMaps.MBEc[ , c(5,1)]
+
+# Coprinopsis cinerea versus Lentinula edodes
+Ccin_vs_Ledodes.KaKsMap <- CcinereaKaKsMaps.MBEc[ , c(8,1)]
+
+# Coprinopsis cinerea versus Schizophyllum commune
+Ccin_vs_Scommune.KaKsMap <- CcinereaKaKsMaps.MBEc[ , c(11,1)]
+
+# have a look at the final format: example -> Ccin_vs_Abisp.KaKsMap
+head(Ccin_vs_Abisp.KaKsMap)
+
+```
+
+```
+                  dN/dS    Gene_id
+1   0.20669999999999999 CC1G_00007
+2 7.6300000000000007E-2 CC1G_00011
+3   0.15290000000000001 CC1G_00012
+4                0.3362 CC1G_00013
+5                2.7E-2 CC1G_00014
+6 3.5700000000000003E-2 CC1G_00015
+```
+
+Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `KaKs Maps` of the aforementioned species from [Cheng et al., 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
 

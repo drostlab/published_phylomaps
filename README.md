@@ -676,4 +676,31 @@ Ath_Cpapaya_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls"
 
 ```
 
+Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `Divergence Maps` of the aforementioned species from [Drost et al., 2015](http://mbe.oxfordjournals.org/content/32/5/1221.short?rss=1) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
+
+
+## [Xuanjin Cheng, Jerome Ho Lam Hui, Yung Yung Lee, Patrick Tik Wan Law and Hoi Shan Kwan, 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047)
+
+__Title__: _A “Developmental Hourglass” in Fungi_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Coprinopsis cinerea_ (fungi)
+- __E-value cutoff__: 1E-3 (blastp; protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: NCBI nr (protein) + custom selection of genomes
+- __Splice variants__: always using the longest splice variant
+
+Download `Phylostratigraphic Map` in R:
+
+```r
+# load package readxl
+library(readxl)
+
+# Coprinopsis cinerea
+
+
+
+```
+
 

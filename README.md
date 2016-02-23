@@ -1,9 +1,12 @@
+---
+output: pdf_document
+---
 # A Collection of Published Phylostratigraphic Maps and Divergence Maps
 
-The following studies include published `Phylostratigraphic Maps` and `Divergence Maps` based on similar approaches, but using different parameter sets.
-This collection aims to store all published maps and furthermore, provides scripts for easy data retrieval to be able to integrate corresponding maps into a phylostranscriptomics workflow with [myTAI](https://github.com/HajkD/myTAI).
+The following studies include published `Phylostratigraphic Maps` and `Divergence Maps` generated based on similar approaches and methodologies.
+This collection of reproducible scripts aims to store all published phylostratigraphic and divergence maps for easy data retrieval and evolutionary transcriptomics studies using the [myTAI](https://github.com/HajkD/myTAI) package.
 
-The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette introduces the integration of the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom phylotranscriptomic analyses.
+The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette provides step by step examples on how to use the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom evolutionary transcriptomics analyses with `myTAI`.
 
 ## [Tomislav Domazet-Lošo, Josip Brajković, Diethard Tautz, 2007](http://www.sciencedirect.com/science/article/pii/S0168952507002995)
 
@@ -39,8 +42,9 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Tomislav Domazet-Lošo and Diethard Tautz, 2008
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2008/09/25/msn214.DC1/mbe-08-0522-File008_msn214.xls", 
-               destfile = "MBE_2008_Homo_Sapiens_PhyloMap.xls" )
+download.file( 
+   url = "http://mbe.oxfordjournals.org/content/suppl/2008/09/25/msn214.DC1/mbe-08-0522-File008_msn214.xls", 
+   destfile = "MBE_2008_Homo_Sapiens_PhyloMap.xls" )
     
 ```
 
@@ -54,7 +58,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-HomoSapiensPhyloMap.MBE <- read_excel("MBE_2008_Homo_Sapiens_PhyloMap.xls", sheet = 1, skip = 1)
+HomoSapiensPhyloMap.MBE <- read_excel("MBE_2008_Homo_Sapiens_PhyloMap.xls", 
+                                      sheet = 1, skip = 1)
 
 # format Phylostratigraphic Map for use with myTAI
 HomoSapiens.PhyloMap <- HomoSapiensPhyloMap.MBE[ , c("Phylostratum","Gene_ID")]
@@ -95,8 +100,9 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Domazet-Lošo and Tautz, 2010
-download.file( url      = "http://www.biomedcentral.com/content/supplementary/1741-7007-8-66-s1.xls", 
-               destfile = "BMCBiology_2010_Homo_Sapiens_PhyloMap.xls" )
+download.file( 
+    url      = "http://www.biomedcentral.com/content/supplementary/1741-7007-8-66-s1.xls",
+    destfile = "BMCBiology_2010_Homo_Sapiens_PhyloMap.xls" )
     
 ```
 
@@ -110,7 +116,10 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-HomoSapiensPhyloMap.BMCBiology <- read_excel("BMCBiology_2010_Homo_Sapiens_PhyloMap.xls", sheet = 1, skip = 3, col_names = FALSE)
+HomoSapiensPhyloMap.BMCBiology <- read_excel("BMCBiology_2010_Homo_Sapiens_PhyloMap.xls", 
+                                              sheet     = 1, 
+                                              skip      = 3, 
+                                              col_names = FALSE)
 
 colnames(HomoSapiensPhyloMap.BMCBiology)[1:2] <- c("Gene_ID","Phylostratum")
 
@@ -157,8 +166,9 @@ Download `Phylostratigraphic Map` using R:
 ```r
 # download the Phylostratigraphic Map of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s2.xls", 
-               destfile = "Nature_2012_Arabidopsis_thaliana_PhyloMap.xls" )
+download.file( 
+  url = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s2.xls",
+  destfile = "Nature_2012_Arabidopsis_thaliana_PhyloMap.xls" )
     
 ```
 
@@ -172,7 +182,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-ArabidopsisThalianaPhyloMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_PhyloMap.xls", sheet = 1)
+ArabidopsisThalianaPhyloMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_PhyloMap.xls", 
+                                                  sheet = 1)
 
 # format Phylostratigraphic Map of Arabidopsis thaliana for use with myTAI
 ArabidopsisThaliana.PhyloMap <- ArabidopsisThalianaPhyloMap.Nature[ , 1:2]
@@ -197,8 +208,9 @@ Download `KaKs Maps` using R:
 ```r
 # download the KaKs Maps of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s3.xls", 
-               destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
+download.file( 
+   url = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s3.xls",
+   destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
 ```    
 
 
@@ -212,7 +224,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Aly_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 1)
+Ath_vs_Aly_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
+                                        sheet = 1)
 
 # format KaKs Map of Arabidopsis thaliana versus Arabidopsis lyrata for use with myTAI
 Ath_vs_Aly.KaKsMap <- Ath_vs_Aly_KaKsMap.Nature[ , 1:2]
@@ -241,7 +254,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Bra_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 2)
+Ath_vs_Bra_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
+                                        sheet = 2)
 
 # format KaKs Map of Arabidopsis thaliana versus Brassica rapa for use with myTAI
 Ath_vs_Bra.KaKsMap <- Ath_vs_Bra_KaKsMap.Nature[ , 1:2]
@@ -272,7 +286,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Crub_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 3)
+Ath_vs_Crub_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
+                                         sheet = 3)
 
 # format KaKs Map of Arabidopsis thaliana versus Capsella rubella for use with myTAI
 Ath_vs_Crub.KaKsMap <- Ath_vs_Crub_KaKsMap.Nature[ , 1:2]
@@ -301,7 +316,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Thal_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 4)
+Ath_vs_Thal_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
+                                         sheet = 4)
 
 # format KaKs Map of Arabidopsis thaliana versus Thelungiella halophila for use with myTAI
 Ath_vs_Thal.KaKsMap <- Ath_vs_Thal_KaKsMap.Nature[ , 1:2]
@@ -341,8 +357,9 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Maps
 # from Neme and Tautz, 2013
-download.file( url      = "http://www.biomedcentral.com/content/supplementary/1471-2164-14-117-s1.xlsx", 
-               destfile = "BMCGenomics_2013_species_PhyloMaps.xlsx" )
+download.file( 
+   url = "http://www.biomedcentral.com/content/supplementary/1471-2164-14-117-s1.xlsx", 
+   destfile = "BMCGenomics_2013_species_PhyloMaps.xlsx" )
     
 ```
 
@@ -357,7 +374,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file: Mus musculus
-MusMusculusPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", sheet = 1)
+MusMusculusPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", 
+                                              sheet = 1)
 
 # format Phylostratigraphic Map of Mus musculus for use with myTAI
 MusMusculus.PhyloMap <- MusMusculusPhyloMap.BMCGenomics[ , c(2,1)]
@@ -381,7 +399,8 @@ head(MusMusculus.PhyloMap)
 ```r
 
 # read the excel file: Homo sapiens
-HomoSapiensPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", sheet = 2)
+HomoSapiensPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", 
+                                              sheet = 2)
 
 # format Phylostratigraphic Map of Homo sapiens for use with myTAI
 HomoSapiens.PhyloMap <- HomoSapiensPhyloMap.BMCGenomics[ , c(2,1)]
@@ -468,14 +487,16 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Danio rerio
 # from Šestak and Domazet-Lošo, 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx", 
-               destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
+download.file( 
+  url = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx",
+  destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
                
 
 # download the Phylostratigraphic Map of Drosophila melanogaster
 # from Šestak and Domazet-Lošo, 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx", 
-               destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
+download.file( 
+  url = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx",
+  destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
     
 ```
 
@@ -489,7 +510,8 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", sheet = 1, skip = 4)
+DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", 
+                                  sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Drerio.PhyloMap <- DrerioPhyloMap.MBEa[ , 1:2]
@@ -510,7 +532,8 @@ head(Drerio.PhyloMap)
 
 ```r
 # read the excel file
-DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", sheet = 1, skip = 4)
+DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", 
+                                         sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Dmelanogaster.PhyloMap <- DmelanogasterPhyloMap.MBEa[ , 1:2]
@@ -696,8 +719,9 @@ Download `Phylostratigraphic Map` and `KaKsMaps` in R:
 ```r
 # download the Phylostratigraphic Map of Coprinopsis cinerea
 # from Cheng et al., 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx", 
-               destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
+download.file( 
+  url = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx",
+  destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
                
 ```
 
@@ -767,5 +791,4 @@ head(Ccin_vs_Abisp.KaKsMap)
 ```
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `KaKs Maps` of the aforementioned species from [Cheng et al., 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
-
 

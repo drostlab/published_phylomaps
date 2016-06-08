@@ -2,7 +2,7 @@
 
 Gene Age Inference is the foundation of most [Evolutionary Transcriptomics](https://github.com/HajkD/myTAI#perform-evolutionary-transcriptomics-with-r) studies.
 The concept behind Evolutionary Transcriptomics is to combine these gene age estimates with gene expression
-data to quantify the average transcriptome age of a biological process of interest ([Drost et al., 2016](http://biorxiv.org/content/early/2016/05/03/051565.abstract)).
+data to quantify the average transcriptome age within a biological process of interest ([Drost et al., 2016](http://biorxiv.org/content/early/2016/05/03/051565.abstract)).
 
 In particular, this approach allowed the quantification of transcriptome conservation of animal and plant embryos passing through embryogenesis by first individually estimating the gene ages of specific animal and plant genomes and combining these gene age estimates with transcriptome data covering several stages of embryo development ([Domazet-Loso and Tautz, 2010 _Nature_](http://www.nature.com/nature/journal/v468/n7325/full/nature09632.html) ; [Quint, Drost et al., 2012 _Nature_](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html) ; [Drost et al., 2015 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/32/5/1221) ; [Drost et al., 2016 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/early/2016/02/23/molbev.msw039.short?rss=1)).
 

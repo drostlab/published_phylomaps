@@ -1,18 +1,43 @@
----
-output: pdf_document
----
-# A Collection of Published Phylostratigraphic Maps and Divergence Maps
+# General Overview
 
-The following studies include published `Phylostratigraphic Maps` and `Divergence Maps` generated based on similar approaches and methodologies.
-This collection of reproducible scripts aims to store all published phylostratigraphic and divergence maps for easy data retrieval and evolutionary transcriptomics studies using the [myTAI](https://github.com/HajkD/myTAI) package.
+Gene Age Inference is the foundation of most [Evolutionary Transcriptomics](https://github.com/HajkD/myTAI#perform-evolutionary-transcriptomics-with-r) studies.
+The concept behind Evolutionary Transcriptomics is to combine these gene age estimates with gene expression
+data to quantify the average transcriptome age of a biological process of interest ([Drost et al., 2016](http://biorxiv.org/content/early/2016/05/03/051565.abstract)).
 
-The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette provides step by step examples on how to use the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom evolutionary transcriptomics analyses with `myTAI`.
+In particular, this approach allowed the quantification of transcriptome conservation of animal and plant embryos passing through embryogenesis by first individually estimating the gene ages of specific animal and plant genomes and combining these gene age estimates with transcriptome data covering several stages of embryo development ([Domazet-Loso and Tautz, 2010 _Nature_](http://www.nature.com/nature/journal/v468/n7325/full/nature09632.html) ; [Quint, Drost et al., 2012 _Nature_](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html) ; [Drost et al., 2015 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/32/5/1221) ; [Drost et al., 2016 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/early/2016/02/23/molbev.msw039.short?rss=1)).
+
+However, as intensely discussed in the past years ([Capra et al., 2013](http://www.sciencedirect.com/science/article/pii/S016895251300111X); [Altenhoff et al., 2016](http://www.nature.com/nmeth/journal/v13/n5/pdf/nmeth.3830.pdf); [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)) gene age inference can be highly biased
+or have other disadvantages ([Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)).
+
+In particular, [genomic phylostratigraphy](http://www.sciencedirect.com/science/article/pii/S0168952507002995) is a prominent BLAST based gene age inference method that was shown to 1) underestimate gene age for a considerable fraction of genes, 2) be biased for rapidly evolving proteins which are short, and/or their most conserved block of sites is small, and 3) these biases create spurious nonuniform distributions of various gene properties among age groups, many of which cannot be predicted a priori ([Moyers & Zhang, 2015](http://mbe.oxfordjournals.org/content/32/1/258.long);  [Moyers & Zhang, 2016](http://mbe.oxfordjournals.org/content/33/5/1245); [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)). 
+
+Based on these findings a recent study suggested to perform gene age inference by combining thirteen common orthology inference algorithms to create gene-age datasets and then characterize the error around each age-call on a per-gene and per algorithm basis. Using this approach systematic error was found to be a large factor in estimating gene age, suggesting that simple consensus algorithms are not enough to give a reliable point estimate ([Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)). However, by generating a consensus gene age and quantifying the possible error in each workflow step, [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113) provide a very useful [database](http://geneages.org/) of
+consensus gene ages for a variety of genomes. 
+
+The [myTAI](https://github.com/HajkD/myTAI) package aims to provide a standard tool for Evolutionary Transcriptomics studies and relies
+on gene age estimate tables as input. Hence, I recommend to use these consensus gene age estimates provided by 
+[Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113) to quantify transcriptome age with `myTAI`.
+
+Alternatively, [Stephen Smith, 2016](https://bib.oxfordjournals.org/content/early/2016/04/20/bib.bbw034.full) argues that _de novo_ gene birth/death and gene family expansion/contraction studies should avoid drawing direct inferences of evolutionary relatedness from measures of sequence similarity alone, and should instead, where possible, use more rigorous phylogeny-based methods. For this purpose, I recommend researchers to consult the [phylomedb database](http://orthology.phylomedb.org/) to retrieve phylogeny-based gene orthology relationships and use these age estimates in combination with [myTAI](https://github.com/HajkD/myTAI).
+
+In case researchers would like to perform _genomic phylostratigraphy_ a new tool named [ORFanFinder](http://bioinformatics.oxfordjournals.org/content/early/2016/03/26/bioinformatics.btw122) was recently released and can be used to generate high quality phylostratigraphic maps.
+
+Evidently, these advancements in gene age research are very recent and gene age inference is a very young and active field of genomic research. Therefore, I accumulated all phylostratigraphic maps or sequence divergence maps that have been published to date and they might nevertheless be useful to study global patterns of transcriptome conservation in biological processes.
+
+However, future Evolutionary Transcriptomics studies (this will include my own research) should consider these new advancements in gene age inference methods and concepts, because they will allow to date transcriptome conservation with [myTAI](https://github.com/HajkD/myTAI) more accurately and more robustly. 
+
+## A Collection of Published Phylostratigraphic Maps and Divergence Maps
+
+The following studies include published `Phylostratigraphic Maps` and `Divergence Maps` based on similar approaches, but using different parameter sets.
+This collection aims to store all published maps and furthermore, provides scripts for easy data retrieval to be able to integrate corresponding maps into a phylostranscriptomics workflow with [myTAI](https://github.com/HajkD/myTAI).
+
+The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette introduces the integration of the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom phylotranscriptomic analyses.
 
 ## [Tomislav Domazet-Lošo, Josip Brajković, Diethard Tautz, 2007](http://www.sciencedirect.com/science/article/pii/S0168952507002995)
 
 __Title__: _A phylostratigraphy approach to uncover the genomic history of major adaptations in metazoan lineages_
 
-This study introduced `Phylostratigraphy` as computational method to quantify gene age in terms of sequence homology resuting in an organism specific `Phylostratigraphic Map`.
+This study introduced `Phylostratigraphy` as computational method to quantify gene age in terms of sequence homology resulting in an organism specific `Phylostratigraphic Map`.
 
 Published `Phylostratigraphic Map`:
 
@@ -42,9 +67,8 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Tomislav Domazet-Lošo and Diethard Tautz, 2008
-download.file( 
-   url = "http://mbe.oxfordjournals.org/content/suppl/2008/09/25/msn214.DC1/mbe-08-0522-File008_msn214.xls", 
-   destfile = "MBE_2008_Homo_Sapiens_PhyloMap.xls" )
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2008/09/25/msn214.DC1/mbe-08-0522-File008_msn214.xls", 
+               destfile = "MBE_2008_Homo_Sapiens_PhyloMap.xls" )
     
 ```
 
@@ -58,8 +82,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-HomoSapiensPhyloMap.MBE <- read_excel("MBE_2008_Homo_Sapiens_PhyloMap.xls", 
-                                      sheet = 1, skip = 1)
+HomoSapiensPhyloMap.MBE <- read_excel("MBE_2008_Homo_Sapiens_PhyloMap.xls", sheet = 1, skip = 1)
 
 # format Phylostratigraphic Map for use with myTAI
 HomoSapiens.PhyloMap <- HomoSapiensPhyloMap.MBE[ , c("Phylostratum","Gene_ID")]
@@ -100,9 +123,8 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Domazet-Lošo and Tautz, 2010
-download.file( 
-    url      = "http://www.biomedcentral.com/content/supplementary/1741-7007-8-66-s1.xls",
-    destfile = "BMCBiology_2010_Homo_Sapiens_PhyloMap.xls" )
+download.file( url      = "http://www.biomedcentral.com/content/supplementary/1741-7007-8-66-s1.xls", 
+               destfile = "BMCBiology_2010_Homo_Sapiens_PhyloMap.xls" )
     
 ```
 
@@ -116,10 +138,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-HomoSapiensPhyloMap.BMCBiology <- read_excel("BMCBiology_2010_Homo_Sapiens_PhyloMap.xls", 
-                                              sheet     = 1, 
-                                              skip      = 3, 
-                                              col_names = FALSE)
+HomoSapiensPhyloMap.BMCBiology <- read_excel("BMCBiology_2010_Homo_Sapiens_PhyloMap.xls", sheet = 1, skip = 3, col_names = FALSE)
 
 colnames(HomoSapiensPhyloMap.BMCBiology)[1:2] <- c("Gene_ID","Phylostratum")
 
@@ -166,9 +185,8 @@ Download `Phylostratigraphic Map` using R:
 ```r
 # download the Phylostratigraphic Map of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( 
-  url = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s2.xls",
-  destfile = "Nature_2012_Arabidopsis_thaliana_PhyloMap.xls" )
+download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s2.xls", 
+               destfile = "Nature_2012_Arabidopsis_thaliana_PhyloMap.xls" )
     
 ```
 
@@ -182,8 +200,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-ArabidopsisThalianaPhyloMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_PhyloMap.xls", 
-                                                  sheet = 1)
+ArabidopsisThalianaPhyloMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_PhyloMap.xls", sheet = 1)
 
 # format Phylostratigraphic Map of Arabidopsis thaliana for use with myTAI
 ArabidopsisThaliana.PhyloMap <- ArabidopsisThalianaPhyloMap.Nature[ , 1:2]
@@ -208,9 +225,8 @@ Download `KaKs Maps` using R:
 ```r
 # download the KaKs Maps of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( 
-   url = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s3.xls",
-   destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
+download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s3.xls", 
+               destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
 ```    
 
 
@@ -224,8 +240,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Aly_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
-                                        sheet = 1)
+Ath_vs_Aly_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 1)
 
 # format KaKs Map of Arabidopsis thaliana versus Arabidopsis lyrata for use with myTAI
 Ath_vs_Aly.KaKsMap <- Ath_vs_Aly_KaKsMap.Nature[ , 1:2]
@@ -254,8 +269,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Bra_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
-                                        sheet = 2)
+Ath_vs_Bra_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 2)
 
 # format KaKs Map of Arabidopsis thaliana versus Brassica rapa for use with myTAI
 Ath_vs_Bra.KaKsMap <- Ath_vs_Bra_KaKsMap.Nature[ , 1:2]
@@ -286,8 +300,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Crub_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
-                                         sheet = 3)
+Ath_vs_Crub_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 3)
 
 # format KaKs Map of Arabidopsis thaliana versus Capsella rubella for use with myTAI
 Ath_vs_Crub.KaKsMap <- Ath_vs_Crub_KaKsMap.Nature[ , 1:2]
@@ -316,8 +329,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-Ath_vs_Thal_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", 
-                                         sheet = 4)
+Ath_vs_Thal_KaKsMap.Nature <- read_excel("Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls", sheet = 4)
 
 # format KaKs Map of Arabidopsis thaliana versus Thelungiella halophila for use with myTAI
 Ath_vs_Thal.KaKsMap <- Ath_vs_Thal_KaKsMap.Nature[ , 1:2]
@@ -357,9 +369,8 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Maps
 # from Neme and Tautz, 2013
-download.file( 
-   url = "http://www.biomedcentral.com/content/supplementary/1471-2164-14-117-s1.xlsx", 
-   destfile = "BMCGenomics_2013_species_PhyloMaps.xlsx" )
+download.file( url      = "http://www.biomedcentral.com/content/supplementary/1471-2164-14-117-s1.xlsx", 
+               destfile = "BMCGenomics_2013_species_PhyloMaps.xlsx" )
     
 ```
 
@@ -374,8 +385,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file: Mus musculus
-MusMusculusPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", 
-                                              sheet = 1)
+MusMusculusPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", sheet = 1)
 
 # format Phylostratigraphic Map of Mus musculus for use with myTAI
 MusMusculus.PhyloMap <- MusMusculusPhyloMap.BMCGenomics[ , c(2,1)]
@@ -399,8 +409,7 @@ head(MusMusculus.PhyloMap)
 ```r
 
 # read the excel file: Homo sapiens
-HomoSapiensPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", 
-                                              sheet = 2)
+HomoSapiensPhyloMap.BMCGenomics <- read_excel("BMCGenomics_2013_species_PhyloMaps.xlsx", sheet = 2)
 
 # format Phylostratigraphic Map of Homo sapiens for use with myTAI
 HomoSapiens.PhyloMap <- HomoSapiensPhyloMap.BMCGenomics[ , c(2,1)]
@@ -487,16 +496,14 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Danio rerio
 # from Šestak and Domazet-Lošo, 2015
-download.file( 
-  url = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx",
-  destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx", 
+               destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
                
 
 # download the Phylostratigraphic Map of Drosophila melanogaster
 # from Šestak and Domazet-Lošo, 2015
-download.file( 
-  url = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx",
-  destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx", 
+               destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
     
 ```
 
@@ -510,8 +517,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", 
-                                  sheet = 1, skip = 4)
+DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Drerio.PhyloMap <- DrerioPhyloMap.MBEa[ , 1:2]
@@ -532,8 +538,7 @@ head(Drerio.PhyloMap)
 
 ```r
 # read the excel file
-DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", 
-                                         sheet = 1, skip = 4)
+DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Dmelanogaster.PhyloMap <- DmelanogasterPhyloMap.MBEa[ , 1:2]
@@ -719,9 +724,8 @@ Download `Phylostratigraphic Map` and `KaKsMaps` in R:
 ```r
 # download the Phylostratigraphic Map of Coprinopsis cinerea
 # from Cheng et al., 2015
-download.file( 
-  url = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx",
-  destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
+download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx", 
+               destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
                
 ```
 
@@ -791,4 +795,5 @@ head(Ccin_vs_Abisp.KaKsMap)
 ```
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `KaKs Maps` of the aforementioned species from [Cheng et al., 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
+
 

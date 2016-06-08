@@ -20,7 +20,7 @@ on gene age estimate tables as input. Hence, I recommend to use these consensus 
 
 Alternatively, [Stephen Smith, 2016](https://bib.oxfordjournals.org/content/early/2016/04/20/bib.bbw034.full) argues that _de novo_ gene birth/death and gene family expansion/contraction studies should avoid drawing direct inferences of evolutionary relatedness from measures of sequence similarity alone, and should instead, where possible, use more rigorous phylogeny-based methods. For this purpose, I recommend researchers to consult the [phylomedb database](http://orthology.phylomedb.org/) to retrieve phylogeny-based gene orthology relationships and use these age estimates in combination with [myTAI](https://github.com/HajkD/myTAI).
 
-In case researchers would like to perform _genomic phylostratigraphy_ a new tool named [ORFanFinder](http://bioinformatics.oxfordjournals.org/content/early/2016/03/26/bioinformatics.btw122) was recently released and can be used to generate high quality phylostratigraphic maps.
+In case researchers would like to perform _genomic phylostratigraphy_, a new tool named [ORFanFinder](http://bioinformatics.oxfordjournals.org/content/early/2016/03/26/bioinformatics.btw122) was recently released and can be used to generate high quality phylostratigraphic maps.
 
 Evidently, these advancements in gene age research are very recent and gene age inference is a very young and active field of genomic research. Therefore, I accumulated all phylostratigraphic maps or sequence divergence maps that have been published to date and they might nevertheless be useful to study global patterns of transcriptome conservation in biological processes.
 

@@ -801,4 +801,77 @@ head(Ccin_vs_Abisp.KaKsMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `KaKs Maps` of the aforementioned species from [Cheng et al., 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+## [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](http://www.nature.com/articles/srep34664)
 
+__Title__: _High expression of new genes in trochophore enlightening the ontogeny and evolution of trochozoans_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _oyster_, _abalone_, _sand worm_
+- __E-value cutoff__: E-value cutoff is not specified in the paper (blastp searches were conducted against the database using oyster proteins, while blastx searches were conducted using the unigenes of abalones and sand worms)
+- __Sequence type__: Protein Sequences, Unigenes
+- __Reference data bases__: NCBI nr (protein) + custom selection of genomes
+- __Splice variants__: Not specified in the paper
+
+Download `Phylostratigraphic Maps` in R:
+
+```r
+# download the Phylostratigraphic Maps of oyster, abalone, sand worm
+# from Xu et al., 2016
+download.file( url      = "http://www.nature.com/article-assets/npg/srep/2016/161004/srep34664/extref/srep34664-s2.xls", 
+               destfile = "Xu_2016_Maps.xls" )
+               
+```
+
+Read the `*.xls` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# load package readxl
+library(readxl)
+
+### Oyster1 Phylostratigraphic Map
+
+oyster1.data <- read_excel("Xu_2016_Maps.xls", sheet = 1)
+
+Oyster1.PhyloMap <- dplyr::select(oyster1.data, age, GeneID)
+
+colnames(Oyster1.PhyloMap) <- c("Phylostratum", "GeneID")
+
+# have a look at the final format
+Oyster1.PhyloMap
+
+
+### Oyster2 Phylostratigraphic Map
+oyster2.data <- read_excel("Xu_2016_Maps.xls", sheet = 2)
+
+Oyster2.PhyloMap <- dplyr::select(oyster2.data, age, GeneID)
+
+colnames(Oyster2.PhyloMap) <- c("Phylostratum", "GeneID")
+
+# have a look at the final format
+Oyster2.PhyloMap
+
+
+### Abalone Phylostratigraphic Map
+abalone.data <- read_excel("Xu_2016_Maps.xls", sheet = 3)
+
+Abalone.PhyloMap <- dplyr::select(abalone.data, age, UnigeneID)
+
+colnames(Abalone.PhyloMap) <- c("Phylostratum", "GeneID")
+
+# have a look at the final format
+Abalone.PhyloMap
+
+
+### Sand worm Phylostratigraphic Map
+sandworm.data <- read_excel("Xu_2016_Maps.xls", sheet = 4)
+
+Sandworm.PhyloMap <- dplyr::select(sandworm.data, age, UnigeneID)
+
+colnames(Sandworm.PhyloMap) <- c("Phylostratum", "GeneID")
+
+# have a look at the final format
+Sandworm.PhyloMap
+```
+
+Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Xu et al., 2016](http://www.nature.com/articles/srep34664) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).

@@ -14,7 +14,7 @@ Based on this debate [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/con
 
 Alternatively, [Stephen Smith, 2016](https://bib.oxfordjournals.org/content/early/2016/04/20/bib.bbw034.full) argues that _de novo_ gene birth/death and gene family expansion/contraction studies should avoid drawing direct inferences of evolutionary relatedness from measures of sequence similarity alone, and should instead, where possible, use more rigorous phylogeny-based methods. For this purpose, I recommend researchers to consult the [phylomedb database](http://orthology.phylomedb.org/) to retrieve phylogeny-based gene orthology relationships and use these age estimates in combination with [myTAI](https://github.com/HajkD/myTAI).
 
-In addition, [Weisman et al., 2020](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000862) test and discusses the issue of _homology detection failure_, i.e., the inability of pairwise local aligners to trace back distantly related homologs only due to neutral sequence divergence which results in spurious patterns of TRG birth (as discussed in [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)). Homology detection failure can cause espcially small and fast-evolving genes to be wrongly annotated as young genes.
+In addition, [Weisman et al., 2020](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000862) test and discuss the issue of _homology detection failure_, i.e., the inability of pairwise local aligners to trace back distantly related homologs only due to neutral sequence divergence which results in spurious patterns of TRG birth (as also discussed in [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)). Homology detection failure can cause especially small and fast-evolving genes to be wrongly annotated as young genes.
 
 A recent publication by [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z) has sought to overcome this limitation and increase the speed and scalability of gene age inference using [`DIAMOND`](https://github.com/bbuchfink/diamond) instead of blast for local pairwise sequence alignment. The effects of horizontal gene transfer and database contaminations are also mitigated with the taxonomic representativeness thresholds. Furthermore, [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z) have examined the effect of other alignment approaches such as protein _structure_ alignment for gene age inference.
 
@@ -937,17 +937,15 @@ Download `Phylostratigraphic Maps` in R:
 
 ```r
 # download the Phylostratigraphic Maps of 10 animals, 10 plants and/or 10 fungi.
-# from Barrera-Redondo et al., 2023
+# [Fungus] from Barrera-Redondo et al., 2023
 download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-023-02895-z/MediaObjects/13059_2023_2895_MOESM3_ESM.xlsx", 
                destfile = "Barrera-Redondo_2023_Maps_fungus.xlsx" )
 
-# download the Phylostratigraphic Maps of 10 animals, 10 plants and 10 fungi.
-# from Barrera-Redondo et al., 2023
+# [Animals] from Barrera-Redondo et al., 2023
 download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-023-02895-z/MediaObjects/13059_2023_2895_MOESM4_ESM.xlsx", 
                destfile = "Barrera-Redondo_2023_Maps_animal.xlsx" )
 
-# download the Phylostratigraphic Maps of 10 animals, 10 plants and 10 fungi.
-# from Barrera-Redondo et al., 2023
+# [Plants] from Barrera-Redondo et al., 2023
 download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-023-02895-z/MediaObjects/13059_2023_2895_MOESM5_ESM.xlsx", 
                destfile = "Barrera-Redondo_2023_Maps_plant.xlsx" )
 ```
@@ -1262,5 +1260,127 @@ Marchantia_polymorpha.PhyloMap <-
     Marchantia_polymorpha.data,
     Phylostratum = rank,
     GeneID = `#gene`
+  )
+```
+
+## [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](https://academic.oup.com/g3journal/article/13/6/jkad077/7097621)
+
+__Title__: _A highly contiguous genome assembly reveals sources of genomic novelty in the symbiotic fungus Rhizophagus irregularis_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Rhizophagus irregularis_, _Geosiphon pyriformis_, _Gigaspora margarita_, _Dissophora decumbens_, _Mortierella elongata_, _Radiomyces spectabilis_, _Phycomyces blakesleeanus_
+- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: NCBI nr (protein)
+- __Splice variants__: always using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
+
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomie-ID were used.
+
+```
+50956	Geosiphon pyriformis
+4874	Gigaspora margarita
+1432141	Rhizophagus irregularis
+101101	Dissophora decumbens
+1314771	Mortierella elongata
+64574	Radiomyces spectabilis
+4837 Phycomyces blakesleeanus
+```
+
+Download `Phylostratigraphic Maps` in R:
+
+```r
+# download the Phylostratigraphic Maps from Manley et al., 2023
+# Rhizophagus irregularis
+download.file( url      = "https://zenodo.org/record/7713976/files/Rhizophagus_irregularis_DAOM197198_1432141_phyloranks.tsv", 
+               destfile = "Rhizophagus_irregularis_DAOM197198_1432141_phyloranks.tsv")
+# Dissophora decumbens
+download.file( url      = "https://zenodo.org/record/7713976/files/Disdec1_101101_phyloranks.tsv", 
+               destfile = "Disdec1_101101_phyloranks.tsv")
+# Geosiphon pyriformis
+download.file( url      = "https://zenodo.org/record/7713976/files/Geopyr1_50956_phyloranks.tsv", 
+               destfile = "Geopyr1_50956_phyloranks.tsv")
+# Gigaspora margarita
+download.file( url      = "https://zenodo.org/record/7713976/files/Gigmar1_4874_phyloranks.tsv", 
+               destfile = "Gigmar1_4874_phyloranks.tsv")
+# Mortierella elongata
+download.file( url      = "https://zenodo.org/record/7713976/files/Morel2_1314771_phyloranks.tsv", 
+               destfile = "Morel2_1314771_phyloranks.tsv")
+# Phycomyces blakesleeanus
+download.file( url      = "https://zenodo.org/record/7713976/files/Phybl2_4837_phyloranks.tsv", 
+               destfile = "Phybl2_4837_phyloranks.tsv")
+# Radiomyces spectabilis
+download.file( url      = "https://zenodo.org/record/7713976/files/Radspe1_64574_phyloranks.tsv", 
+               destfile = "Radspe1_64574_phyloranks.tsv")
+```
+
+Read the `*.tsv` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# load package readr
+library(readr)
+
+### Phylostratigraphic Maps
+# Rhizophagus irregularis
+Rhizophagus_irregularis.data <-readr::read_tsv("Rhizophagus_irregularis_DAOM197198_1432141_phyloranks.tsv")
+Rhizophagus_irregularis.PhyloMap <- 
+  dplyr::select(
+    Rhizophagus_irregularis.data,
+    Phylostratum = PS,
+    GeneID
+  )
+
+# Dissophora decumbens
+Dissophora_decumbens.data <-readr::read_tsv("Disdec1_101101_phyloranks.tsv")
+Dissophora_decumbens.PhyloMap <- 
+  dplyr::select(
+    Dissophora_decumbens.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Geosiphon pyriformis
+Geosiphon_pyriformis.data <-readr::read_tsv("Geopyr1_50956_phyloranks.tsv")
+Geosiphon_pyriformis.PhyloMap <- 
+  dplyr::select(
+    Geosiphon_pyriformis.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Gigaspora margarita
+Gigaspora_margarita.data <-readr::read_tsv("Gigmar1_4874_phyloranks.tsv")
+Gigaspora_margarita.PhyloMap <- 
+  dplyr::select(
+    Gigaspora_margarita.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Mortierella elongata
+Mortierella_elongata.data <-readr::read_tsv("Morel2_1314771_phyloranks.tsv")
+Mortierella_elongata.PhyloMap <- 
+  dplyr::select(
+    Mortierella_elongata.data,
+    Phylostratum = rank,
+    GeneID = V1
+  )
+
+# Phycomyces blakesleeanus
+Phycomyces_blakesleeanus.data <-readr::read_tsv("Phybl2_4837_phyloranks.tsv")
+Phycomyces_blakesleeanus.PhyloMap <- 
+  dplyr::select(
+    Phycomyces_blakesleeanus.data,
+    Phylostratum = rank,
+    GeneID
+  )
+
+# Radiomyces spectabilis
+Radiomyces_spectabilis.data <-readr::read_tsv("Radspe1_64574_phyloranks.tsv")
+Radiomyces_spectabilis.PhyloMap <- 
+  dplyr::select(
+    Radiomyces_spectabilis.data,
+    Phylostratum = rank,
+    GeneID
   )
 ```

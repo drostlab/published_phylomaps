@@ -2,7 +2,7 @@
 
 Gene Age Inference is the foundation of most [Evolutionary Transcriptomics](https://github.com/HajkD/myTAI#perform-evolutionary-transcriptomics-with-r) studies.
 The concept behind Evolutionary Transcriptomics is to combine these gene age estimates with gene expression
-data to quantify the average transcriptome age within a biological process of interest ([Drost et al., 2016, bioRxiv](http://biorxiv.org/content/early/2016/05/03/051565.abstract)).
+data to quantify the average transcriptome age within a biological process of interest ([Drost et al., 2018, _Bioinformatics_](https://academic.oup.com/bioinformatics/article/34/9/1589/4772684)).
 
 In particular, this approach allowed the quantification of transcriptome conservation of animal and plant embryos passing through embryogenesis by first individually estimating the gene ages of specific animal and plant genomes and combining these gene age estimates with transcriptome data covering several stages of embryo development ([Domazet-Loso and Tautz, 2010 _Nature_](http://www.nature.com/nature/journal/v468/n7325/full/nature09632.html) ; [Quint, Drost et al., 2012 _Nature_](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html) ; [Drost et al., 2015 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/32/5/1221) ; [Drost et al., 2016 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/early/2016/02/23/molbev.msw039.short?rss=1)).
 
@@ -10,16 +10,20 @@ However, as intensely discussed in the past years ([Capra et al., 2013](http://w
 
 In particular, Moyers & Zhang argue that [genomic phylostratigraphy](http://www.sciencedirect.com/science/article/pii/S0168952507002995) (a prominent BLAST based gene age inference method) 1) underestimates gene age for a considerable fraction of genes, 2) is biased for rapidly evolving proteins which are short, and/or their most conserved block of sites is small, and 3) these biases create spurious nonuniform distributions of various gene properties among age groups, many of which cannot be predicted a priori ([Moyers & Zhang, 2015](http://mbe.oxfordjournals.org/content/32/1/258.long);  [Moyers & Zhang, 2016](http://mbe.oxfordjournals.org/content/33/5/1245); [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)). However, these arguments were based on simulated data and were inconclusive due to [errors in their analyses](http://mbe.oxfordjournals.org/content/33/11/3031.full?etoc). Furthermore, [Domazet-Loso et al., 2016](http://www.biorxiv.org/content/early/2016/06/26/060756.abstract) provide convincing evidence that there is __no__ phylostratigraphic bias. In general, however, an objective benchmarking set representing the tree of life is still missing and therefore any procedure aiming to quantify gene ages will be biased to some degree.
 
-Based on this debate a recent study suggested to perform gene age inference by combining thirteen common orthology inference algorithms to create gene age datasets and then characterize the error around each age-call on a per-gene and per-algorithm basis. Using this approach systematic error was found to be a large factor in estimating gene age, suggesting that simple consensus algorithms are not enough to give a reliable point estimate ([Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)). However, by generating a consensus gene age and quantifying the possible error in each workflow step, [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113) provide a very useful [database](http://geneages.org/) of
-consensus gene ages for a variety of genomes. 
+Based on this debate [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113) suggest to perform gene age inference by combining thirteen common orthology inference algorithms to create gene age datasets and then characterize the error around each age-call on a per-gene and per-algorithm basis. Using this approach systematic error was found to be a large factor in estimating gene age, suggesting that simple consensus algorithms are not enough to give a reliable point estimate. However, by generating a consensus gene age and quantifying the possible error in each workflow step, [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113) provide a very useful [database](http://geneages.org/) of consensus gene ages for a variety of genomes. 
 
 Alternatively, [Stephen Smith, 2016](https://bib.oxfordjournals.org/content/early/2016/04/20/bib.bbw034.full) argues that _de novo_ gene birth/death and gene family expansion/contraction studies should avoid drawing direct inferences of evolutionary relatedness from measures of sequence similarity alone, and should instead, where possible, use more rigorous phylogeny-based methods. For this purpose, I recommend researchers to consult the [phylomedb database](http://orthology.phylomedb.org/) to retrieve phylogeny-based gene orthology relationships and use these age estimates in combination with [myTAI](https://github.com/HajkD/myTAI).
+
+In addition, [Weisman et al., 2020](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000862) test and discuss the issue of _homology detection failure_, i.e., the inability of pairwise local aligners to trace back distantly related homologs only due to neutral sequence divergence which results in spurious patterns of TRG birth (as also discussed in [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)). Homology detection failure can cause especially small and fast-evolving genes to be wrongly annotated as young genes.
+
+A recent publication by [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z) has sought to overcome this limitation and increase the speed and scalability of gene age inference using [`DIAMOND`](https://github.com/bbuchfink/diamond) instead of blast for local pairwise sequence alignment. The effects of horizontal gene transfer and database contaminations are also mitigated with the taxonomic representativeness thresholds. Furthermore, [Barrera-Redondo et al., 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z) have examined the effect of other alignment approaches such as protein _structure_ alignment for gene age inference.
 
 The [myTAI](https://github.com/HajkD/myTAI) package aims to provide a standard tool for Evolutionary Transcriptomics studies and relies
 on gene age estimate tables as input. Hence, I recommend to follow the active discussion on gene age inference and to consult all available resources to robustly estimate gene age (for ex. use the consensus gene age estimates provided by 
 [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113) and _phylostratigraphic maps_ generated by phylostratigraphy to quantify transcriptome age with `myTAI`).
 
-In case researchers would like to perform _genomic phylostratigraphy_, a new tool named [ORFanFinder](http://bioinformatics.oxfordjournals.org/content/early/2016/03/26/bioinformatics.btw122) has recently been released and can be used to generate high quality phylostratigraphic maps.
+In case researchers would like to perform _genomic phylostratigraphy_, [GenEra](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z) has recently been released and can be used to generate high quality phylostratigraphic maps. Instructions for using `GenEra` is provided [here](https://github.com/josuebarrera/GenEra).
+Previous tools for _genomic phylostratigraphy_ include [ORFanFinder](http://bioinformatics.oxfordjournals.org/content/early/2016/03/26/bioinformatics.btw122).
 
 Evidently, these advancements in gene age research are very recent and gene age inference is a very young and active field of genomic research. Therefore, many more studies need to address the robust and realistic inference
 of gene age and a community standard is still missing.
@@ -875,3 +879,508 @@ Sandworm.PhyloMap
 ```
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Xu et al., 2016](http://www.nature.com/articles/srep34664) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
+
+## [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)
+
+__Title__: _Uncovering gene-family founder events during major evolutionary transitions in animals, plants and fungi using GenEra_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: 
+  - Fungi: _Saccharomyces cerevisiae_ (strain S288C), _Schizosaccharomyces pombe_, _Aspergillus niger_ (strain CBS 513.88), _Morchella conica_, _Cryptococcus neoformans_ (var. neoformans strain JEC21), _Kwoniella mangroviensis_ (strain CBS 8507), _Agaricus bisporus_ (var. bisporus strain H97), _Tremella mesenterica_ (strain DSM 1558), _Mucor circinelloides_, _Batrachochytrium dendrobatidis_ (strain JAM81)
+  - Animals: _Drosophila melanogaster_, _Caenorhabditis elegans_, _Echinococcus granulosus_, _Octopus vulgaris_, _Capitella teleta_,	_Mus musculus_,	_Apostichopus japonicus_, _Nematostella vectensis_,	_Trichoplax adhaerens_,	_Amphimedon queenslandica_
+  - Plants: _Arabidopsis thaliana_, _Glycine max_, _Solanum lycopersicum_, _Oryza sativa_, _Vanilla planifolia_, _Musa acuminata_, _Picea glauca_, _Selaginella moellendorffii_, _Physcomitrella patens_, _Marchantia polymorpha_
+- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: NCBI nr (protein)
+- __Splice variants__: always using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
+
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomie-ID were used.
+
+```
+# Fungi
+559292	Saccharomyces cerevisiae S288C
+4896	Schizosaccharomyces pombe
+425011	Aspergillus niger CBS 513.88
+5194	Morchella conica
+214684	Cryptococcus neoformans var. neoformans JEC21
+1296122	Kwoniella mangroviensis CBS 8507
+936046	Agaricus bisporus var. bisporus H97
+578456	Tremella mesenterica DSM 1558
+36080	Mucor circinelloides
+684364	Batrachochytrium dendrobatidis JAM81
+# Animals
+7227	Drosophila melanogaster
+6239	Caenorhabditis elegans
+6210	Echinococcus granulosus
+6645	Octopus vulgaris
+283909	Capitella teleta
+10090	Mus musculus
+307972	Apostichopus japonicus
+45351	Nematostella vectensis
+10228	Trichoplax adhaerens
+400682	Amphimedon queenslandica
+# Plants
+3702	Arabidopsis thaliana
+3847	Glycine max
+4081	Solanum lycopersicum
+39947	Oryza sativa
+51239	Vanilla planifolia
+214687	Musa acuminata
+3330	Picea glauca
+88036	Selaginella moellendorffii
+3218	Physcomitrella patens
+3197	Marchantia polymorpha
+```
+
+Download `Phylostratigraphic Maps` in R:
+
+```r
+# download the Phylostratigraphic Maps of 10 animals, 10 plants and/or 10 fungi.
+# [Fungus] from Barrera-Redondo et al., 2023
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-023-02895-z/MediaObjects/13059_2023_2895_MOESM3_ESM.xlsx", 
+               destfile = "Barrera-Redondo_2023_Maps_fungus.xlsx" )
+
+# [Animals] from Barrera-Redondo et al., 2023
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-023-02895-z/MediaObjects/13059_2023_2895_MOESM4_ESM.xlsx", 
+               destfile = "Barrera-Redondo_2023_Maps_animal.xlsx" )
+
+# [Plants] from Barrera-Redondo et al., 2023
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-023-02895-z/MediaObjects/13059_2023_2895_MOESM5_ESM.xlsx", 
+               destfile = "Barrera-Redondo_2023_Maps_plant.xlsx" )
+```
+
+Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# load package readxl
+library(readxl)
+
+### Fungus Phylostratigraphic Maps
+
+# Budding yeast
+Saccharomyces_cerevisiae_S288C.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "559292_gene_ages")
+Saccharomyces_cerevisiae_S288C.PhyloMap <- 
+  dplyr::select(
+    Saccharomyces_cerevisiae_S288C.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Fission yeast
+Schizosaccharomyces_pombe.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "4896_gene_ages")
+Schizosaccharomyces_pombe.PhyloMap <- 
+  dplyr::select(
+    Schizosaccharomyces_pombe.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Black mould fungus
+Aspergillus_niger_CBS_513.88.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "425011_gene_ages")
+Aspergillus_niger_CBS_513.88.PhyloMap <- 
+  dplyr::select(
+    Aspergillus_niger_CBS_513.88.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Black morels
+Morchella_conica.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "5194_gene_ages")
+Morchella_conica.PhyloMap <- 
+  dplyr::select(
+    Morchella_conica.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Cryptococcus neoformans
+Cryptococcus_neoformans_var.neoformans_JEC21.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "214684_gene_ages")
+Cryptococcus_neoformans_var.neoformans_JEC21.PhyloMap <- 
+  dplyr::select(
+    Cryptococcus_neoformans_var.neoformans_JEC21.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Kwoniella mangroviensis (or K. mangrovensis)
+Kwoniella_mangroviensis.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "1296122_gene_ages")
+Kwoniella_mangroviensis.PhyloMap <- 
+  dplyr::select(
+    Kwoniella_mangroviensis.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Portobello mushrooms
+Agaricus_bisporus.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "936046_gene_ages")
+Agaricus_bisporus.PhyloMap <- 
+  dplyr::select(
+    Agaricus_bisporus.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Yellow brain (or goldeb jelly fungus, yellow trembler, witches' butter)
+Tremella_mesenterica.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "578456_gene_ages")
+Tremella_mesenterica.PhyloMap <- 
+  dplyr::select(
+    Tremella_mesenterica.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Mucor circinelloides
+Mucor_circinelloides.data <-
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "36080_gene_ages")
+Mucor_circinelloides.PhyloMap <- 
+  dplyr::select(
+    Mucor_circinelloides.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Amphibian chytrid fungus
+Batrachochytrium_dendrobatidis_JAM81.data <-
+  read_excel("Barrera-Redondo_2023_Maps_fungus.xlsx", sheet = "684364_gene_ages")
+Batrachochytrium_dendrobatidis_JAM81.PhyloMap <- 
+  dplyr::select(
+    Batrachochytrium_dendrobatidis_JAM81.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+### Animal Phylostratigraphic Maps
+
+# Fruit fly
+Drosophila_melanogaster.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "7227_gene_ages")
+Drosophila_melanogaster.PhyloMap <- 
+  dplyr::select(
+    Drosophila_melanogaster.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Caenorhabditis elegans
+Caenorhabditis_elegans.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "6239_gene_ages")
+Caenorhabditis_elegans.PhyloMap <- 
+  dplyr::select(
+    Caenorhabditis_elegans.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Hydatid worm
+Echinococcus_granulosus.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "6210_gene_ages")
+Echinococcus_granulosus.PhyloMap <- 
+  dplyr::select(
+    Echinococcus_granulosus.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Common octopus
+Octopus_vulgaris.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "6645_gene_ages")
+Octopus_vulgaris.PhyloMap <- 
+  dplyr::select(
+    Octopus_vulgaris.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Capitella teleta
+Capitella_teleta.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "283909_gene_ages")
+Capitella_teleta.PhyloMap <- 
+  dplyr::select(
+    Capitella_teleta.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# House mouse
+Mus_musculus.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "10090_gene_ages")
+Mus_musculus.PhyloMap <- 
+  dplyr::select(
+    Mus_musculus.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Japanese sea cucumber
+Apostichopus_japonicus.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "307972_gene_ages")
+Apostichopus_japonicus.PhyloMap <- 
+  dplyr::select(
+    Apostichopus_japonicus.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Starlet sea anemone
+Nematostella_vectensis.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "45351_gene_ages")
+Nematostella_vectensis.PhyloMap <- 
+  dplyr::select(
+    Nematostella_vectensis.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Trichoplax adhaerens
+Trichoplax_adhaerens.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "10228_gene_ages")
+Trichoplax_adhaerens.PhyloMap <- 
+  dplyr::select(
+    Trichoplax_adhaerens.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Amphimedon queenslandica
+Amphimedon_queenslandica.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "400682_gene_ages")
+Amphimedon_queenslandica.PhyloMap <- 
+  dplyr::select(
+    Amphimedon_queenslandica.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+### Plant Phylostratigraphic Maps
+
+# Thale cress
+Arabidopsis_thaliana.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "3702_gene_ages")
+Arabidopsis_thaliana.PhyloMap <- 
+  dplyr::select(
+    Arabidopsis_thaliana.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Soybean
+Glycine_max.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "3847_gene_ages")
+Glycine_max.PhyloMap <- 
+  dplyr::select(
+    Glycine_max.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Tomato
+Solanum_lycopersicum.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "4081_gene_ages")
+Solanum_lycopersicum.PhyloMap <- 
+  dplyr::select(
+    Solanum_lycopersicum.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Rice
+Oryza_sativa.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "39947_gene_ages")
+Oryza_sativa.PhyloMap <- 
+  dplyr::select(
+    Oryza_sativa.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Flat-leaved vanilla
+Vanilla_planifolia.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "51239_gene_ages")
+Vanilla_planifolia.PhyloMap <- 
+  dplyr::select(
+    Vanilla_planifolia.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Musa acuminata
+Musa_acuminata.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "214687_gene_ages")
+Musa_acuminata.PhyloMap <- 
+  dplyr::select(
+    Musa_acuminata.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# White spruce
+Picea_glauca.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "3330_gene_ages")
+Picea_glauca.PhyloMap <- 
+  dplyr::select(
+    Picea_glauca.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Selaginella moellendorffii
+Selaginella_moellendorffii.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "88036_gene_ages")
+Selaginella_moellendorffii.PhyloMap <- 
+  dplyr::select(
+    Selaginella_moellendorffii.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Spreading earthmoss
+Physcomitrella_patens.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "3218_gene_ages")
+Physcomitrella_patens.PhyloMap <- 
+  dplyr::select(
+    Physcomitrella_patens.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Marchantia polymorpha
+Marchantia_polymorpha.data <- 
+  read_excel("Barrera-Redondo_2023_Maps_plant.xlsx", sheet = "3197_gene_ages")
+Marchantia_polymorpha.PhyloMap <- 
+  dplyr::select(
+    Marchantia_polymorpha.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+```
+
+## [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](https://academic.oup.com/g3journal/article/13/6/jkad077/7097621)
+
+__Title__: _A highly contiguous genome assembly reveals sources of genomic novelty in the symbiotic fungus Rhizophagus irregularis_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Rhizophagus irregularis_, _Geosiphon pyriformis_, _Gigaspora margarita_, _Dissophora decumbens_, _Mortierella elongata_, _Radiomyces spectabilis_, _Phycomyces blakesleeanus_
+- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: NCBI nr (protein)
+- __Splice variants__: always using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
+
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomie-ID were used.
+
+```
+50956	Geosiphon pyriformis
+4874	Gigaspora margarita
+1432141	Rhizophagus irregularis
+101101	Dissophora decumbens
+1314771	Mortierella elongata
+64574	Radiomyces spectabilis
+4837 Phycomyces blakesleeanus
+```
+
+Download `Phylostratigraphic Maps` in R:
+
+```r
+# download the Phylostratigraphic Maps from Manley et al., 2023
+# Rhizophagus irregularis
+download.file( url      = "https://zenodo.org/record/7713976/files/Rhizophagus_irregularis_DAOM197198_1432141_phyloranks.tsv", 
+               destfile = "Rhizophagus_irregularis_DAOM197198_1432141_phyloranks.tsv")
+# Dissophora decumbens
+download.file( url      = "https://zenodo.org/record/7713976/files/Disdec1_101101_phyloranks.tsv", 
+               destfile = "Disdec1_101101_phyloranks.tsv")
+# Geosiphon pyriformis
+download.file( url      = "https://zenodo.org/record/7713976/files/Geopyr1_50956_phyloranks.tsv", 
+               destfile = "Geopyr1_50956_phyloranks.tsv")
+# Gigaspora margarita
+download.file( url      = "https://zenodo.org/record/7713976/files/Gigmar1_4874_phyloranks.tsv", 
+               destfile = "Gigmar1_4874_phyloranks.tsv")
+# Mortierella elongata
+download.file( url      = "https://zenodo.org/record/7713976/files/Morel2_1314771_phyloranks.tsv", 
+               destfile = "Morel2_1314771_phyloranks.tsv")
+# Phycomyces blakesleeanus
+download.file( url      = "https://zenodo.org/record/7713976/files/Phybl2_4837_phyloranks.tsv", 
+               destfile = "Phybl2_4837_phyloranks.tsv")
+# Radiomyces spectabilis
+download.file( url      = "https://zenodo.org/record/7713976/files/Radspe1_64574_phyloranks.tsv", 
+               destfile = "Radspe1_64574_phyloranks.tsv")
+```
+
+Read the `*.tsv` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# load package readr
+library(readr)
+
+### Phylostratigraphic Maps
+# Rhizophagus irregularis
+Rhizophagus_irregularis.data <-readr::read_tsv("Rhizophagus_irregularis_DAOM197198_1432141_phyloranks.tsv")
+Rhizophagus_irregularis.PhyloMap <- 
+  dplyr::select(
+    Rhizophagus_irregularis.data,
+    Phylostratum = PS,
+    GeneID
+  )
+
+# Dissophora decumbens
+Dissophora_decumbens.data <-readr::read_tsv("Disdec1_101101_phyloranks.tsv")
+Dissophora_decumbens.PhyloMap <- 
+  dplyr::select(
+    Dissophora_decumbens.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Geosiphon pyriformis
+Geosiphon_pyriformis.data <-readr::read_tsv("Geopyr1_50956_phyloranks.tsv")
+Geosiphon_pyriformis.PhyloMap <- 
+  dplyr::select(
+    Geosiphon_pyriformis.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Gigaspora margarita
+Gigaspora_margarita.data <-readr::read_tsv("Gigmar1_4874_phyloranks.tsv")
+Gigaspora_margarita.PhyloMap <- 
+  dplyr::select(
+    Gigaspora_margarita.data,
+    Phylostratum = rank,
+    GeneID = `#gene`
+  )
+
+# Mortierella elongata
+Mortierella_elongata.data <-readr::read_tsv("Morel2_1314771_phyloranks.tsv")
+Mortierella_elongata.PhyloMap <- 
+  dplyr::select(
+    Mortierella_elongata.data,
+    Phylostratum = rank,
+    GeneID = V1
+  )
+
+# Phycomyces blakesleeanus
+Phycomyces_blakesleeanus.data <-readr::read_tsv("Phybl2_4837_phyloranks.tsv")
+Phycomyces_blakesleeanus.PhyloMap <- 
+  dplyr::select(
+    Phycomyces_blakesleeanus.data,
+    Phylostratum = rank,
+    GeneID
+  )
+
+# Radiomyces spectabilis
+Radiomyces_spectabilis.data <-readr::read_tsv("Radspe1_64574_phyloranks.tsv")
+Radiomyces_spectabilis.PhyloMap <- 
+  dplyr::select(
+    Radiomyces_spectabilis.data,
+    Phylostratum = rank,
+    GeneID
+  )
+```

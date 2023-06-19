@@ -132,7 +132,7 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Domazet-Lošo and Tautz, 2010
-download.file( url      = "http://www.biomedcentral.com/content/supplementary/1741-7007-8-66-s1.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2F1741-7007-8-66/MediaObjects/12915_2009_362_MOESM1_ESM.xls", 
                destfile = "BMCBiology_2010_Homo_Sapiens_PhyloMap.xls" )
     
 ```
@@ -194,7 +194,7 @@ Download `Phylostratigraphic Map` using R:
 ```r
 # download the Phylostratigraphic Map of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s2.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038%2Fnature11394/MediaObjects/41586_2012_BFnature11394_MOESM335_ESM.xls", 
                destfile = "Nature_2012_Arabidopsis_thaliana_PhyloMap.xls" )
     
 ```
@@ -234,7 +234,7 @@ Download `KaKs Maps` using R:
 ```r
 # download the KaKs Maps of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s3.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038%2Fnature11394/MediaObjects/41586_2012_BFnature11394_MOESM336_ESM.xls", 
                destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
 ```    
 
@@ -378,9 +378,9 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Maps
 # from Neme and Tautz, 2013
-download.file( url      = "http://www.biomedcentral.com/content/supplementary/1471-2164-14-117-s1.xlsx", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2F1471-2164-14-117/MediaObjects/12864_2012_4867_MOESM1_ESM.xlsx", 
                destfile = "BMCGenomics_2013_species_PhyloMaps.xlsx" )
-    
+
 ```
 
 Read the `*.xlsx` file storing the `Phylostratigraphic Maps` of _Mus musculus_, _Homo sapiens_, _Danio rerio_, and _Gasterosteus aculeatus_ and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
@@ -822,7 +822,7 @@ Download `Phylostratigraphic Maps` in R:
 ```r
 # download the Phylostratigraphic Maps of oyster, abalone, sand worm
 # from Xu et al., 2016
-download.file( url      = "http://www.nature.com/article-assets/npg/srep/2016/161004/srep34664/extref/srep34664-s2.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038%2Fsrep34664/MediaObjects/41598_2016_BFsrep34664_MOESM2_ESM.xls", 
                destfile = "Xu_2016_Maps.xls" )
                
 ```

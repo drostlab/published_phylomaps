@@ -55,7 +55,7 @@ Published `Phylostratigraphic Map`:
 - __Sequence type__: Protein Sequences and ESTs
 - __Reference data bases__: NCBI nr (protein); trace and EST archives (EST)
 
-__Data sets are not avaiable as Supplementary Tables.__
+__Data sets are not available as Supplementary Tables.__
 
 
 ## [Tomislav Domazet-Lošo and Diethard Tautz, 2008](http://mbe.oxfordjournals.org/content/25/12/2699)

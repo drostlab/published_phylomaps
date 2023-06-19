@@ -55,7 +55,7 @@ Published `Phylostratigraphic Map`:
 - __Sequence type__: Protein Sequences and ESTs
 - __Reference data bases__: NCBI nr (protein); trace and EST archives (EST)
 
-__Data sets are not avaiable as Supplementary Tables.__
+__Data sets are not available as Supplementary Tables.__
 
 
 ## [Tomislav Domazet-Lošo and Diethard Tautz, 2008](http://mbe.oxfordjournals.org/content/25/12/2699)
@@ -76,8 +76,14 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Tomislav Domazet-Lošo and Diethard Tautz, 2008
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2008/09/25/msn214.DC1/mbe-08-0522-File008_msn214.xls", 
-               destfile = "MBE_2008_Homo_Sapiens_PhyloMap.xls" )
+download.file( url      = "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mbe/25/12/10.1093_molbev_msn214/2/msn214_Supplementary_Data.zip?Expires=1690187066&Signature=UprdKTMgmqkhITKxIxbE74~blDUfhi2rgQn57X5d3YfFEM-bMqqC~LqMLJjGjlNkwOBrR2XGgOwWPyh4UEkXBdcpTbHiH71YFyZUeMJHhVBCLJQ7ceztyOJyrQC8sVScYyUZuPtOtgLgjdMrk5eP72P4R~pj-mPaIxx43efDP4VhjebsYjx8ICB~VEGZRMFAdfpKn8OZyLnMOuE37W3lRwpF9Nyr3~Tk7DUaIGmtzY6mv6mCmcO6bo2aq3pdXWkenDCo2rW-Mtdr8SN3fyClJZjFNHOMYFj4fgRjQoLUCSn-5JH59xqEvETalQTCdqV4y5h280AGrEcPp8CFfQwNhg__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA",
+               destfile = "MBE_2008_Homo_Sapiens_PhyloMap.zip")
+
+utils::unzip( zipfile = "MBE_2008_Homo_Sapiens_PhyloMap.zip",
+              files = "mbe-08-0522-File008_msn214.xls")
+
+HomoSapiensPhyloMap.MBE <- read_excel("mbe-08-0522-File008_msn214.xls", sheet = 1, skip = 1)
+
     
 ```
 
@@ -132,7 +138,7 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Domazet-Lošo and Tautz, 2010
-download.file( url      = "http://www.biomedcentral.com/content/supplementary/1741-7007-8-66-s1.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2F1741-7007-8-66/MediaObjects/12915_2009_362_MOESM1_ESM.xls", 
                destfile = "BMCBiology_2010_Homo_Sapiens_PhyloMap.xls" )
     
 ```
@@ -194,7 +200,7 @@ Download `Phylostratigraphic Map` using R:
 ```r
 # download the Phylostratigraphic Map of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s2.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038%2Fnature11394/MediaObjects/41586_2012_BFnature11394_MOESM335_ESM.xls", 
                destfile = "Nature_2012_Arabidopsis_thaliana_PhyloMap.xls" )
     
 ```
@@ -234,7 +240,7 @@ Download `KaKs Maps` using R:
 ```r
 # download the KaKs Maps of Arabidopsis thaliana
 # from Quint et al., 2012
-download.file( url      = "http://www.nature.com/nature/journal/v490/n7418/extref/nature11394-s3.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038%2Fnature11394/MediaObjects/41586_2012_BFnature11394_MOESM336_ESM.xls", 
                destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
 ```    
 
@@ -378,9 +384,9 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Maps
 # from Neme and Tautz, 2013
-download.file( url      = "http://www.biomedcentral.com/content/supplementary/1471-2164-14-117-s1.xlsx", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186%2F1471-2164-14-117/MediaObjects/12864_2012_4867_MOESM1_ESM.xlsx", 
                destfile = "BMCGenomics_2013_species_PhyloMaps.xlsx" )
-    
+
 ```
 
 Read the `*.xlsx` file storing the `Phylostratigraphic Maps` of _Mus musculus_, _Homo sapiens_, _Danio rerio_, and _Gasterosteus aculeatus_ and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
@@ -505,14 +511,17 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Danio rerio
 # from Šestak and Domazet-Lošo, 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx", 
-               destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
-               
 
+download.file( url      = "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mbe/32/2/10.1093_molbev_msu319/1/msu319_Supplementary_Data.zip?Expires=1690187793&Signature=IaT8wOG0Q2ftMybR2s2JaQu0z38sToxHW4p7HZ3XFNBC089SoMLBkxhLzpvp9nHypm14pM4RLJZXxX5zi~m9Zl29tlIXHgzu75zVddtgP6qDDZ4m00~JTCRIiivLTzmNlAjthM5hzvDkAPuy8j8Ya0KLUVRy0867nVRsY58weDf1Ql79ZiWNT1TTIXMGD~l2OPT4kSTaCOtiZ6xyIceXwDCo~6dgA82MC1LuFdNUXkaEPJ7NhtDHvpQ1CqF474TfIqpBZ~TCGv0Q1hhbDA~q0o-TMsPvsOIueHpnrvPj6nEPlHJDC0G2mdbE7si5gjFi5T7Ll5Ctw-l3a5zyeuWEdw__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA",
+               destfile = "MBE_2015a_Drerio_PhyloMap.zip")
+
+utils::unzip( zipfile = "MBE_2015a_Drerio_PhyloMap.zip",
+              files = "TableS3-2.xlsx")
+               
 # download the Phylostratigraphic Map of Drosophila melanogaster
 # from Šestak and Domazet-Lošo, 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx", 
-               destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
+utils::unzip( zipfile = "MBE_2015a_Drerio_PhyloMap.zip",
+              files = "TableS6.xlsx")
     
 ```
 
@@ -526,7 +535,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", sheet = 1, skip = 4)
+DrerioPhyloMap.MBEa <- read_excel("TableS3-2.xlsx", sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Drerio.PhyloMap <- DrerioPhyloMap.MBEa[ , 1:2]
@@ -547,7 +556,7 @@ head(Drerio.PhyloMap)
 
 ```r
 # read the excel file
-DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", sheet = 1, skip = 4)
+DmelanogasterPhyloMap.MBEa <- read_excel("TableS6.xlsx", sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Dmelanogaster.PhyloMap <- DmelanogasterPhyloMap.MBEa[ , 1:2]
@@ -733,8 +742,11 @@ Download `Phylostratigraphic Map` and `KaKsMaps` in R:
 ```r
 # download the Phylostratigraphic Map of Coprinopsis cinerea
 # from Cheng et al., 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx", 
-               destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
+download.file( url      = "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mbe/32/6/10.1093_molbev_msv047/2/msv047_Supplementary_Data.zip?Expires=1690186915&Signature=ZU-Sy0xAdxdvcnmoJuoCH9vX95C5~6gQxN9IJ-jhlmAeVkN9Lmil1NBgOGL2q42uNodckyT2w4B-8q2JfLQP1HJ5~GnxMJAVbxbCMkoxnOsd6PIH-a8Y~PAUlLbVqAEEbroCsDBwzLd6dykBfDRhtX3xYYZCWc8UWqyk2mL0tFKVdaKYUGWtl9WlWb-BUcUrtYBJpmuh7OCj2POzt0YJ-a-fqoqx9Usq6KtvgV2RbdwSQb3mvavzio8a99yjBZBC0MPQOimwdWSoRdoIXC1Ey2NzTMDOqy-t1vEceVr4vK7t3laZOHUP8N43MXM5rFdmq6rbo3ggLOZJSFf9jpcM7A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA", 
+               destfile = "MBE_2015c_Ccinerea_Maps.zip" )
+
+utils::unzip( zipfile = "MBE_2015c_Ccinerea_Maps.zip",
+              files = "Table_S9.xlsx")
                
 ```
 
@@ -746,7 +758,7 @@ library(readxl)
 
 # Coprinopsis cinerea Phylostratigraphic Map
 
-CcinereaPhyloMap.MBEc <- read_excel("MBE_2015c_Ccinerea_Maps.xlsx", sheet = 2)
+CcinereaPhyloMap.MBEc <- read_excel("Table_S9.xlsx", sheet = 2)
 
 Ccinerea.PhyloMap <- CcinereaPhyloMap.MBEc[ , c(4,1)]
 
@@ -774,7 +786,7 @@ library(readxl)
 
 # Coprinopsis cinerea KaKs Maps
 
-CcinereaKaKsMaps.MBEc <- read_excel("MBE_2015c_Ccinerea_Maps.xlsx", sheet = 3, skip = 1)
+CcinereaKaKsMaps.MBEc <- read_excel("Table_S9.xlsx", sheet = 3, skip = 1)
 
 # Coprinopsis cinerea versus Agaricus bisporus var bisporus H97
 Ccin_vs_Abisp.KaKsMap <- CcinereaKaKsMaps.MBEc[ , c(2,1)]
@@ -822,7 +834,7 @@ Download `Phylostratigraphic Maps` in R:
 ```r
 # download the Phylostratigraphic Maps of oyster, abalone, sand worm
 # from Xu et al., 2016
-download.file( url      = "http://www.nature.com/article-assets/npg/srep/2016/161004/srep34664/extref/srep34664-s2.xls", 
+download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038%2Fsrep34664/MediaObjects/41598_2016_BFsrep34664_MOESM2_ESM.xls", 
                destfile = "Xu_2016_Maps.xls" )
                
 ```
@@ -955,6 +967,7 @@ Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for t
 ```r
 # load package readxl
 library(readxl)
+library(dplyr)
 
 ### Fungus Phylostratigraphic Maps
 
@@ -966,7 +979,8 @@ Saccharomyces_cerevisiae_S288C.PhyloMap <-
     Saccharomyces_cerevisiae_S288C.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Fission yeast
 Schizosaccharomyces_pombe.data <- 
@@ -976,7 +990,8 @@ Schizosaccharomyces_pombe.PhyloMap <-
     Schizosaccharomyces_pombe.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Black mould fungus
 Aspergillus_niger_CBS_513.88.data <- 
@@ -986,7 +1001,8 @@ Aspergillus_niger_CBS_513.88.PhyloMap <-
     Aspergillus_niger_CBS_513.88.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Black morels
 Morchella_conica.data <- 
@@ -996,7 +1012,8 @@ Morchella_conica.PhyloMap <-
     Morchella_conica.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Cryptococcus neoformans
 Cryptococcus_neoformans_var.neoformans_JEC21.data <- 
@@ -1006,7 +1023,8 @@ Cryptococcus_neoformans_var.neoformans_JEC21.PhyloMap <-
     Cryptococcus_neoformans_var.neoformans_JEC21.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Kwoniella mangroviensis (or K. mangrovensis)
 Kwoniella_mangroviensis.data <- 
@@ -1016,7 +1034,8 @@ Kwoniella_mangroviensis.PhyloMap <-
     Kwoniella_mangroviensis.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Portobello mushrooms
 Agaricus_bisporus.data <- 
@@ -1026,7 +1045,8 @@ Agaricus_bisporus.PhyloMap <-
     Agaricus_bisporus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Yellow brain (or goldeb jelly fungus, yellow trembler, witches' butter)
 Tremella_mesenterica.data <- 
@@ -1036,7 +1056,8 @@ Tremella_mesenterica.PhyloMap <-
     Tremella_mesenterica.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Mucor circinelloides
 Mucor_circinelloides.data <-
@@ -1046,7 +1067,8 @@ Mucor_circinelloides.PhyloMap <-
     Mucor_circinelloides.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Amphibian chytrid fungus
 Batrachochytrium_dendrobatidis_JAM81.data <-
@@ -1056,7 +1078,8 @@ Batrachochytrium_dendrobatidis_JAM81.PhyloMap <-
     Batrachochytrium_dendrobatidis_JAM81.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 ### Animal Phylostratigraphic Maps
 
@@ -1068,7 +1091,8 @@ Drosophila_melanogaster.PhyloMap <-
     Drosophila_melanogaster.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Caenorhabditis elegans
 Caenorhabditis_elegans.data <- 
@@ -1078,7 +1102,8 @@ Caenorhabditis_elegans.PhyloMap <-
     Caenorhabditis_elegans.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Hydatid worm
 Echinococcus_granulosus.data <- 
@@ -1088,7 +1113,8 @@ Echinococcus_granulosus.PhyloMap <-
     Echinococcus_granulosus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Common octopus
 Octopus_vulgaris.data <- 
@@ -1098,7 +1124,8 @@ Octopus_vulgaris.PhyloMap <-
     Octopus_vulgaris.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Capitella teleta
 Capitella_teleta.data <- 
@@ -1108,9 +1135,10 @@ Capitella_teleta.PhyloMap <-
     Capitella_teleta.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
-# House mouse
+#	House mouse
 Mus_musculus.data <- 
   read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "10090_gene_ages")
 Mus_musculus.PhyloMap <- 
@@ -1118,9 +1146,10 @@ Mus_musculus.PhyloMap <-
     Mus_musculus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
-# Japanese sea cucumber
+#	Japanese sea cucumber
 Apostichopus_japonicus.data <- 
   read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "307972_gene_ages")
 Apostichopus_japonicus.PhyloMap <- 
@@ -1128,9 +1157,10 @@ Apostichopus_japonicus.PhyloMap <-
     Apostichopus_japonicus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
-# Starlet sea anemone
+#	Starlet sea anemone
 Nematostella_vectensis.data <- 
   read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "45351_gene_ages")
 Nematostella_vectensis.PhyloMap <- 
@@ -1138,7 +1168,8 @@ Nematostella_vectensis.PhyloMap <-
     Nematostella_vectensis.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Trichoplax adhaerens
 Trichoplax_adhaerens.data <- 
@@ -1148,7 +1179,8 @@ Trichoplax_adhaerens.PhyloMap <-
     Trichoplax_adhaerens.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Amphimedon queenslandica
 Amphimedon_queenslandica.data <- 
@@ -1158,7 +1190,8 @@ Amphimedon_queenslandica.PhyloMap <-
     Amphimedon_queenslandica.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 ### Plant Phylostratigraphic Maps
 
@@ -1170,7 +1203,8 @@ Arabidopsis_thaliana.PhyloMap <-
     Arabidopsis_thaliana.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Soybean
 Glycine_max.data <- 
@@ -1180,7 +1214,8 @@ Glycine_max.PhyloMap <-
     Glycine_max.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Tomato
 Solanum_lycopersicum.data <- 
@@ -1190,7 +1225,8 @@ Solanum_lycopersicum.PhyloMap <-
     Solanum_lycopersicum.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Rice
 Oryza_sativa.data <- 
@@ -1200,7 +1236,8 @@ Oryza_sativa.PhyloMap <-
     Oryza_sativa.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Flat-leaved vanilla
 Vanilla_planifolia.data <- 
@@ -1210,7 +1247,8 @@ Vanilla_planifolia.PhyloMap <-
     Vanilla_planifolia.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Musa acuminata
 Musa_acuminata.data <- 
@@ -1220,7 +1258,8 @@ Musa_acuminata.PhyloMap <-
     Musa_acuminata.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # White spruce
 Picea_glauca.data <- 
@@ -1230,7 +1269,8 @@ Picea_glauca.PhyloMap <-
     Picea_glauca.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Selaginella moellendorffii
 Selaginella_moellendorffii.data <- 
@@ -1240,7 +1280,8 @@ Selaginella_moellendorffii.PhyloMap <-
     Selaginella_moellendorffii.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Spreading earthmoss
 Physcomitrella_patens.data <- 
@@ -1250,7 +1291,8 @@ Physcomitrella_patens.PhyloMap <-
     Physcomitrella_patens.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Marchantia polymorpha
 Marchantia_polymorpha.data <- 
@@ -1260,7 +1302,8 @@ Marchantia_polymorpha.PhyloMap <-
     Marchantia_polymorpha.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 ```
 
 ## [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](https://academic.oup.com/g3journal/article/13/6/jkad077/7097621)

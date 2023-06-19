@@ -76,8 +76,14 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Homo sapiens
 # from Tomislav Domazet-Lošo and Diethard Tautz, 2008
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2008/09/25/msn214.DC1/mbe-08-0522-File008_msn214.xls", 
-               destfile = "MBE_2008_Homo_Sapiens_PhyloMap.xls" )
+download.file( url      = "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mbe/25/12/10.1093_molbev_msn214/2/msn214_Supplementary_Data.zip?Expires=1690187066&Signature=UprdKTMgmqkhITKxIxbE74~blDUfhi2rgQn57X5d3YfFEM-bMqqC~LqMLJjGjlNkwOBrR2XGgOwWPyh4UEkXBdcpTbHiH71YFyZUeMJHhVBCLJQ7ceztyOJyrQC8sVScYyUZuPtOtgLgjdMrk5eP72P4R~pj-mPaIxx43efDP4VhjebsYjx8ICB~VEGZRMFAdfpKn8OZyLnMOuE37W3lRwpF9Nyr3~Tk7DUaIGmtzY6mv6mCmcO6bo2aq3pdXWkenDCo2rW-Mtdr8SN3fyClJZjFNHOMYFj4fgRjQoLUCSn-5JH59xqEvETalQTCdqV4y5h280AGrEcPp8CFfQwNhg__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA",
+               destfile = "MBE_2008_Homo_Sapiens_PhyloMap.zip")
+
+utils::unzip( zipfile = "MBE_2008_Homo_Sapiens_PhyloMap.zip",
+              files = "mbe-08-0522-File008_msn214.xls")
+
+HomoSapiensPhyloMap.MBE <- read_excel("mbe-08-0522-File008_msn214.xls", sheet = 1, skip = 1)
+
     
 ```
 
@@ -505,14 +511,17 @@ Download Map using R:
 ```r
 # download the Phylostratigraphic Map of Danio rerio
 # from Šestak and Domazet-Lošo, 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS3-2.xlsx", 
-               destfile = "MBE_2015a_Drerio_PhyloMap.xlsx" )
-               
 
+download.file( url      = "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mbe/32/2/10.1093_molbev_msu319/1/msu319_Supplementary_Data.zip?Expires=1690187793&Signature=IaT8wOG0Q2ftMybR2s2JaQu0z38sToxHW4p7HZ3XFNBC089SoMLBkxhLzpvp9nHypm14pM4RLJZXxX5zi~m9Zl29tlIXHgzu75zVddtgP6qDDZ4m00~JTCRIiivLTzmNlAjthM5hzvDkAPuy8j8Ya0KLUVRy0867nVRsY58weDf1Ql79ZiWNT1TTIXMGD~l2OPT4kSTaCOtiZ6xyIceXwDCo~6dgA82MC1LuFdNUXkaEPJ7NhtDHvpQ1CqF474TfIqpBZ~TCGv0Q1hhbDA~q0o-TMsPvsOIueHpnrvPj6nEPlHJDC0G2mdbE7si5gjFi5T7Ll5Ctw-l3a5zyeuWEdw__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA",
+               destfile = "MBE_2015a_Drerio_PhyloMap.zip")
+
+utils::unzip( zipfile = "MBE_2015a_Drerio_PhyloMap.zip",
+              files = "TableS3-2.xlsx")
+               
 # download the Phylostratigraphic Map of Drosophila melanogaster
 # from Šestak and Domazet-Lošo, 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2014/11/17/msu319.DC1/TableS6.xlsx", 
-               destfile = "MBE_2015a_Dmelanogaster_PhyloMap.xlsx" )
+utils::unzip( zipfile = "MBE_2015a_Drerio_PhyloMap.zip",
+              files = "TableS6.xlsx")
     
 ```
 
@@ -526,7 +535,7 @@ install.packages("readxl")
 library(readxl)
 
 # read the excel file
-DrerioPhyloMap.MBEa <- read_excel("MBE_2015a_Drerio_PhyloMap.xlsx", sheet = 1, skip = 4)
+DrerioPhyloMap.MBEa <- read_excel("TableS3-2.xlsx", sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Drerio.PhyloMap <- DrerioPhyloMap.MBEa[ , 1:2]
@@ -547,7 +556,7 @@ head(Drerio.PhyloMap)
 
 ```r
 # read the excel file
-DmelanogasterPhyloMap.MBEa <- read_excel("MBE_2015a_Dmelanogaster_PhyloMap.xlsx", sheet = 1, skip = 4)
+DmelanogasterPhyloMap.MBEa <- read_excel("TableS6.xlsx", sheet = 1, skip = 4)
 
 # format Phylostratigraphic Map for use with myTAI
 Dmelanogaster.PhyloMap <- DmelanogasterPhyloMap.MBEa[ , 1:2]
@@ -733,8 +742,11 @@ Download `Phylostratigraphic Map` and `KaKsMaps` in R:
 ```r
 # download the Phylostratigraphic Map of Coprinopsis cinerea
 # from Cheng et al., 2015
-download.file( url      = "http://mbe.oxfordjournals.org/content/suppl/2015/02/27/msv047.DC1/Table_S9.xlsx", 
-               destfile = "MBE_2015c_Ccinerea_Maps.xlsx" )
+download.file( url      = "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/mbe/32/6/10.1093_molbev_msv047/2/msv047_Supplementary_Data.zip?Expires=1690186915&Signature=ZU-Sy0xAdxdvcnmoJuoCH9vX95C5~6gQxN9IJ-jhlmAeVkN9Lmil1NBgOGL2q42uNodckyT2w4B-8q2JfLQP1HJ5~GnxMJAVbxbCMkoxnOsd6PIH-a8Y~PAUlLbVqAEEbroCsDBwzLd6dykBfDRhtX3xYYZCWc8UWqyk2mL0tFKVdaKYUGWtl9WlWb-BUcUrtYBJpmuh7OCj2POzt0YJ-a-fqoqx9Usq6KtvgV2RbdwSQb3mvavzio8a99yjBZBC0MPQOimwdWSoRdoIXC1Ey2NzTMDOqy-t1vEceVr4vK7t3laZOHUP8N43MXM5rFdmq6rbo3ggLOZJSFf9jpcM7A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA", 
+               destfile = "MBE_2015c_Ccinerea_Maps.zip" )
+
+utils::unzip( zipfile = "MBE_2015c_Ccinerea_Maps.zip",
+              files = "Table_S9.xlsx")
                
 ```
 
@@ -746,7 +758,7 @@ library(readxl)
 
 # Coprinopsis cinerea Phylostratigraphic Map
 
-CcinereaPhyloMap.MBEc <- read_excel("MBE_2015c_Ccinerea_Maps.xlsx", sheet = 2)
+CcinereaPhyloMap.MBEc <- read_excel("Table_S9.xlsx", sheet = 2)
 
 Ccinerea.PhyloMap <- CcinereaPhyloMap.MBEc[ , c(4,1)]
 
@@ -774,7 +786,7 @@ library(readxl)
 
 # Coprinopsis cinerea KaKs Maps
 
-CcinereaKaKsMaps.MBEc <- read_excel("MBE_2015c_Ccinerea_Maps.xlsx", sheet = 3, skip = 1)
+CcinereaKaKsMaps.MBEc <- read_excel("Table_S9.xlsx", sheet = 3, skip = 1)
 
 # Coprinopsis cinerea versus Agaricus bisporus var bisporus H97
 Ccin_vs_Abisp.KaKsMap <- CcinereaKaKsMaps.MBEc[ , c(2,1)]

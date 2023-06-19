@@ -955,6 +955,7 @@ Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for t
 ```r
 # load package readxl
 library(readxl)
+library(dplyr)
 
 ### Fungus Phylostratigraphic Maps
 
@@ -966,7 +967,8 @@ Saccharomyces_cerevisiae_S288C.PhyloMap <-
     Saccharomyces_cerevisiae_S288C.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Fission yeast
 Schizosaccharomyces_pombe.data <- 
@@ -976,7 +978,8 @@ Schizosaccharomyces_pombe.PhyloMap <-
     Schizosaccharomyces_pombe.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Black mould fungus
 Aspergillus_niger_CBS_513.88.data <- 
@@ -986,7 +989,8 @@ Aspergillus_niger_CBS_513.88.PhyloMap <-
     Aspergillus_niger_CBS_513.88.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Black morels
 Morchella_conica.data <- 
@@ -996,7 +1000,8 @@ Morchella_conica.PhyloMap <-
     Morchella_conica.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Cryptococcus neoformans
 Cryptococcus_neoformans_var.neoformans_JEC21.data <- 
@@ -1006,7 +1011,8 @@ Cryptococcus_neoformans_var.neoformans_JEC21.PhyloMap <-
     Cryptococcus_neoformans_var.neoformans_JEC21.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Kwoniella mangroviensis (or K. mangrovensis)
 Kwoniella_mangroviensis.data <- 
@@ -1016,7 +1022,8 @@ Kwoniella_mangroviensis.PhyloMap <-
     Kwoniella_mangroviensis.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Portobello mushrooms
 Agaricus_bisporus.data <- 
@@ -1026,7 +1033,8 @@ Agaricus_bisporus.PhyloMap <-
     Agaricus_bisporus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Yellow brain (or goldeb jelly fungus, yellow trembler, witches' butter)
 Tremella_mesenterica.data <- 
@@ -1036,7 +1044,8 @@ Tremella_mesenterica.PhyloMap <-
     Tremella_mesenterica.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Mucor circinelloides
 Mucor_circinelloides.data <-
@@ -1046,7 +1055,8 @@ Mucor_circinelloides.PhyloMap <-
     Mucor_circinelloides.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Amphibian chytrid fungus
 Batrachochytrium_dendrobatidis_JAM81.data <-
@@ -1056,7 +1066,8 @@ Batrachochytrium_dendrobatidis_JAM81.PhyloMap <-
     Batrachochytrium_dendrobatidis_JAM81.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 ### Animal Phylostratigraphic Maps
 
@@ -1068,7 +1079,8 @@ Drosophila_melanogaster.PhyloMap <-
     Drosophila_melanogaster.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Caenorhabditis elegans
 Caenorhabditis_elegans.data <- 
@@ -1078,7 +1090,8 @@ Caenorhabditis_elegans.PhyloMap <-
     Caenorhabditis_elegans.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Hydatid worm
 Echinococcus_granulosus.data <- 
@@ -1088,7 +1101,8 @@ Echinococcus_granulosus.PhyloMap <-
     Echinococcus_granulosus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Common octopus
 Octopus_vulgaris.data <- 
@@ -1098,7 +1112,8 @@ Octopus_vulgaris.PhyloMap <-
     Octopus_vulgaris.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Capitella teleta
 Capitella_teleta.data <- 
@@ -1108,9 +1123,10 @@ Capitella_teleta.PhyloMap <-
     Capitella_teleta.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
-# House mouse
+#	House mouse
 Mus_musculus.data <- 
   read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "10090_gene_ages")
 Mus_musculus.PhyloMap <- 
@@ -1118,9 +1134,10 @@ Mus_musculus.PhyloMap <-
     Mus_musculus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
-# Japanese sea cucumber
+#	Japanese sea cucumber
 Apostichopus_japonicus.data <- 
   read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "307972_gene_ages")
 Apostichopus_japonicus.PhyloMap <- 
@@ -1128,9 +1145,10 @@ Apostichopus_japonicus.PhyloMap <-
     Apostichopus_japonicus.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
-# Starlet sea anemone
+#	Starlet sea anemone
 Nematostella_vectensis.data <- 
   read_excel("Barrera-Redondo_2023_Maps_animal.xlsx", sheet = "45351_gene_ages")
 Nematostella_vectensis.PhyloMap <- 
@@ -1138,7 +1156,8 @@ Nematostella_vectensis.PhyloMap <-
     Nematostella_vectensis.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Trichoplax adhaerens
 Trichoplax_adhaerens.data <- 
@@ -1148,7 +1167,8 @@ Trichoplax_adhaerens.PhyloMap <-
     Trichoplax_adhaerens.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Amphimedon queenslandica
 Amphimedon_queenslandica.data <- 
@@ -1158,7 +1178,8 @@ Amphimedon_queenslandica.PhyloMap <-
     Amphimedon_queenslandica.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 ### Plant Phylostratigraphic Maps
 
@@ -1170,7 +1191,8 @@ Arabidopsis_thaliana.PhyloMap <-
     Arabidopsis_thaliana.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Soybean
 Glycine_max.data <- 
@@ -1180,7 +1202,8 @@ Glycine_max.PhyloMap <-
     Glycine_max.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Tomato
 Solanum_lycopersicum.data <- 
@@ -1190,7 +1213,8 @@ Solanum_lycopersicum.PhyloMap <-
     Solanum_lycopersicum.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Rice
 Oryza_sativa.data <- 
@@ -1200,7 +1224,8 @@ Oryza_sativa.PhyloMap <-
     Oryza_sativa.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Flat-leaved vanilla
 Vanilla_planifolia.data <- 
@@ -1210,7 +1235,8 @@ Vanilla_planifolia.PhyloMap <-
     Vanilla_planifolia.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Musa acuminata
 Musa_acuminata.data <- 
@@ -1220,7 +1246,8 @@ Musa_acuminata.PhyloMap <-
     Musa_acuminata.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # White spruce
 Picea_glauca.data <- 
@@ -1230,7 +1257,8 @@ Picea_glauca.PhyloMap <-
     Picea_glauca.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Selaginella moellendorffii
 Selaginella_moellendorffii.data <- 
@@ -1240,7 +1268,8 @@ Selaginella_moellendorffii.PhyloMap <-
     Selaginella_moellendorffii.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Spreading earthmoss
 Physcomitrella_patens.data <- 
@@ -1250,7 +1279,8 @@ Physcomitrella_patens.PhyloMap <-
     Physcomitrella_patens.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 
 # Marchantia polymorpha
 Marchantia_polymorpha.data <- 
@@ -1260,7 +1290,8 @@ Marchantia_polymorpha.PhyloMap <-
     Marchantia_polymorpha.data,
     Phylostratum = rank,
     GeneID = `#gene`
-  )
+  ) %>%
+  dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 ```
 
 ## [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](https://academic.oup.com/g3journal/article/13/6/jkad077/7097621)

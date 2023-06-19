@@ -1316,7 +1316,7 @@ Published `Phylostratigraphic Map`:
 - __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
 - __Sequence type__: Protein Sequences
 - __Reference data bases__: NCBI nr (protein)
-- __Splice variants__: always using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
+- __Splice variants__: always using the longest isoform when available
 
 This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomie-ID were used.
 

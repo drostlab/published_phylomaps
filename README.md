@@ -902,7 +902,7 @@ Published `Phylostratigraphic Map`:
   - Fungi: _Saccharomyces cerevisiae_ (strain S288C), _Schizosaccharomyces pombe_, _Aspergillus niger_ (strain CBS 513.88), _Morchella conica_, _Cryptococcus neoformans_ (var. neoformans strain JEC21), _Kwoniella mangroviensis_ (strain CBS 8507), _Agaricus bisporus_ (var. bisporus strain H97), _Tremella mesenterica_ (strain DSM 1558), _Mucor circinelloides_, _Batrachochytrium dendrobatidis_ (strain JAM81)
   - Animals: _Drosophila melanogaster_, _Caenorhabditis elegans_, _Echinococcus granulosus_, _Octopus vulgaris_, _Capitella teleta_,	_Mus musculus_,	_Apostichopus japonicus_, _Nematostella vectensis_,	_Trichoplax adhaerens_,	_Amphimedon queenslandica_
   - Plants: _Arabidopsis thaliana_, _Glycine max_, _Solanum lycopersicum_, _Oryza sativa_, _Vanilla planifolia_, _Musa acuminata_, _Picea glauca_, _Selaginella moellendorffii_, _Physcomitrella patens_, _Marchantia polymorpha_
-- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences; ultra-sensitive mode)
 - __Sequence type__: Protein Sequences
 - __Reference data bases__: NCBI nr (protein)
 - __Splice variants__: always using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
@@ -1313,7 +1313,7 @@ __Title__: _A highly contiguous genome assembly reveals sources of genomic novel
 Published `Phylostratigraphic Map`:
 
 - __Organisms__: _Rhizophagus irregularis_, _Geosiphon pyriformis_, _Gigaspora margarita_, _Dissophora decumbens_, _Mortierella elongata_, _Radiomyces spectabilis_, _Phycomyces blakesleeanus_
-- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences; ultra-sensitive mode)
 - __Sequence type__: Protein Sequences
 - __Reference data bases__: NCBI nr (protein)
 - __Splice variants__: always using the longest isoform when available

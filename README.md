@@ -42,6 +42,110 @@ This collection aims to store all published maps and furthermore, provides scrip
 
 The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette introduces the integration of the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom phylotranscriptomic analyses.
 
+## Table of Contents
+**Animals**
+- _Homo sapiens_
+  - [Tomislav Domazet-Lošo and Diethard Tautz, 2008](#tomislav-domazet-lošo-and-diethard-tautz-2008)
+  - [Tomislav Domazet-Lošo and Diethard Tautz, 2010](#tomislav-domazet-lošo-and-diethard-tautz-2010)
+  - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
+- _Drosophila melanogaster_
+  - [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](#martin-sebastijan-šestak-and-tomislav-domazet-lošo-2015)
+  - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Danio rerio_
+  - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
+  - [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](#martin-sebastijan-šestak-and-tomislav-domazet-lošo-2015)
+  - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
+- _Mus musculus_ (mouse)
+  - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Gasterosteus aculeatus_ (three-spined stickleback)
+  - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
+- _Crassostrea gigas_ (Pacific oyster)
+  - [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](#xu-f-domazet-lošo-t-fan-d-dunwell-tl-li-l-fang-x-zhang-g-2016)
+- _Haliotis discus_ (Pacific abalone)
+  - [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](#xu-f-domazet-lošo-t-fan-d-dunwell-tl-li-l-fang-x-zhang-g-2016)
+- _Perinereis aibuhitensis_ (sand worm)
+  - [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](#xu-f-domazet-lošo-t-fan-d-dunwell-tl-li-l-fang-x-zhang-g-2016)
+- _Caenorhabditis elegans_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Echinococcus granulosus_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Octopus vulgaris_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Capitella teleta_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Apostichopus japonicus_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Nematostella vectensis_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Trichoplax adhaerens_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Amphimedon queenslandica_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+
+**Plants**
+- _Arabidopsis thaliana_
+  - [Marcel Quint, Hajk-Georg Drost, Alexander Gabel, Kristian Karsten Ullrich, Markus Boenn, Ivo Grosse, 2012](#marcel-quint-hajk-georg-drost-alexander-gabel-kristian-karsten-ullrichmarkus-boenn-ivo-grosse-2012)
+  - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Glycine max_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Solanum lycopersicum_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Oryza sativa_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Vanilla planifolia_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Musa acuminata_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Picea glauca_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Selaginella moellendorffii_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Physcomitrella patens_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Marchantia polymorpha_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+
+**Fungi**
+- _Coprinopsis cinerea_ (gray shag)
+  - [Xuanjin Cheng, Jerome Ho Lam Hui, Yung Yung Lee, Patrick Tik Wan Law and Hoi Shan Kwan, 2015](#xuanjin-cheng-jerome-ho-lam-hui-yung-yung-lee-patrick-tik-wan-law-and-hoi-shan-kwan-2015)
+- _Saccharomyces cerevisiae_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Schizosaccharomyces pombe_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Aspergillus niger_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Morchella conica_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Cryptococcus neoformans_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Kwoniella mangroviensis_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Agaricus bisporus_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Tremella mesenterica_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Mucor circinelloides_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Batrachochytrium dendrobatidis_
+  - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Rhizophagus irregularis_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+- _Geosiphon pyriformis_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+- _Gigaspora margarita_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+- _Dissophora decumbens_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+- _Mortierella elongata_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+- _Radiomyces spectabilis_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+- _Phycomyces blakesleeanus_
+  - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
+
 ## [Tomislav Domazet-Lošo, Josip Brajković, Diethard Tautz, 2007](http://www.sciencedirect.com/science/article/pii/S0168952507002995)
 
 __Title__: _A phylostratigraphy approach to uncover the genomic history of major adaptations in metazoan lineages_

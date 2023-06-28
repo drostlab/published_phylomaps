@@ -42,6 +42,8 @@ This collection aims to store all published maps and furthermore, provides scrip
 
 The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette introduces the integration of the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom phylotranscriptomic analyses.
 
+__Note: some of the phylostratigraphic maps are now retrievable via the R data package, [`phylomapr`](https://github.com/LotharukpongJS/phylomapr). More will be added in the near future.__
+
 ## Table of Contents
 **Animals**
 - _Homo sapiens_

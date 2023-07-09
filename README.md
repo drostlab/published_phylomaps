@@ -1026,7 +1026,7 @@ download.file( url      = "https://genome.cshlp.org/content/suppl/2021/08/23/gr.
 
 ```
 
-Read the *.xls file storing the Phylostratigraphic Maps and Divergence Maps and format it for the use with myTAI:
+Read the `*.xls` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
 
 ```r
 # install the readxl package
@@ -1037,10 +1037,29 @@ library(readxl)
 
 # read the excel file
 PpacificusPhyloMap <- read_excel("GenomeResearch_2021_PhyloMap_Pp.xlsx", sheet = 1, skip = 1)
+colnames(PpacificusPhyloMap) <- c("GeneID", "Phylostratum")
+PpacificusPhyloMap$Phylostratum <- gsub("unsign", "p00", PpacificusPhyloMap$Phylostratum)
+PpacificusPhyloMap$Phylostratum <- as.numeric(gsub("p", "", PpacificusPhyloMap$Phylostratum))
 
 # have a look at the final format
 head(PpacificusPhyloMap)
 ```
+
+```r
+# load package readxl
+library(readxl)
+
+# read the excel file
+CelegansPhyloMap <- read_excel("GenomeResearch_2021_PhyloMap_Ce.xlsx", sheet = 1, skip = 1)
+colnames(CelegansPhyloMap) <- c("GeneID", "TranscriptID", "Phylostratum")
+CelegansPhyloMap$Phylostratum <- gsub("unsign", "c00", CelegansPhyloMap$Phylostratum)
+CelegansPhyloMap$Phylostratum <- as.numeric(gsub("c", "", CelegansPhyloMap$Phylostratum))
+
+# have a look at the final format
+head(CelegansPhyloMap)
+```
+
+Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Sun et al., 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
 ## [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)
 

@@ -70,7 +70,10 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 - _Perinereis aibuhitensis_ (sand worm)
   - [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](#xu-f-domazet-lošo-t-fan-d-dunwell-tl-li-l-fang-x-zhang-g-2016)
 - _Caenorhabditis elegans_
+  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](#shuai-sun-christian-roedelsperger-ralf-j-sommer-2021)
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+- _Pristionchus pacificus_
+  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](#shuai-sun-christian-roedelsperger-ralf-j-sommer-2021)
 - _Echinococcus granulosus_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Octopus vulgaris_
@@ -997,6 +1000,66 @@ Sandworm.PhyloMap
 ```
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Xu et al., 2016](http://www.nature.com/articles/srep34664) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
+
+## [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121)
+
+__Title__: _Single worm transcriptomics identifies a developmental core network of oscillating genes with deep conservation across nematodes_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Caenorhabditis elegans_, _Pristionchus pacificus_
+- __E-value cutoff__: 1E-3 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: WormBase (protein)
+- __Splice variants__: longest isoform
+
+Download Maps using R:
+
+```r
+# download the Phylostratigraphic Maps
+# from Sun et al., 2021
+download.file( url      = "https://genome.cshlp.org/content/suppl/2021/08/23/gr.275303.121.DC1/Supplemental_Table_S5.xlsx", 
+               destfile = "GenomeResearch_2021_PhyloMap_Pp.xlsx" )
+
+download.file( url      = "https://genome.cshlp.org/content/suppl/2021/08/23/gr.275303.121.DC1/Supplemental_Table_S6.xlsx", 
+               destfile = "GenomeResearch_2021_PhyloMap_Ce.xlsx" )
+
+```
+
+Read the `*.xls` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+
+```r
+# install the readxl package
+install.packages("readxl")
+
+# load package readxl
+library(readxl)
+
+# read the excel file
+PpacificusPhyloMap <- read_excel("GenomeResearch_2021_PhyloMap_Pp.xlsx", sheet = 1, skip = 1)
+colnames(PpacificusPhyloMap) <- c("GeneID", "Phylostratum")
+PpacificusPhyloMap$Phylostratum <- gsub("unsign", "p00", PpacificusPhyloMap$Phylostratum)
+PpacificusPhyloMap$Phylostratum <- as.numeric(gsub("p", "", PpacificusPhyloMap$Phylostratum))
+
+# have a look at the final format
+head(PpacificusPhyloMap)
+```
+
+```r
+# load package readxl
+library(readxl)
+
+# read the excel file
+CelegansPhyloMap <- read_excel("GenomeResearch_2021_PhyloMap_Ce.xlsx", sheet = 1, skip = 1)
+colnames(CelegansPhyloMap) <- c("GeneID", "TranscriptID", "Phylostratum")
+CelegansPhyloMap$Phylostratum <- gsub("unsign", "c00", CelegansPhyloMap$Phylostratum)
+CelegansPhyloMap$Phylostratum <- as.numeric(gsub("c", "", CelegansPhyloMap$Phylostratum))
+
+# have a look at the final format
+head(CelegansPhyloMap)
+```
+
+Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Sun et al., 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
 ## [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)
 

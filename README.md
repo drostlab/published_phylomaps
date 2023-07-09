@@ -1019,17 +1019,27 @@ Download Maps using R:
 # download the Phylostratigraphic Maps
 # from Sun et al., 2021
 download.file( url      = "https://genome.cshlp.org/content/suppl/2021/08/23/gr.275303.121.DC1/Supplemental_Table_S5.xlsx", 
-               destfile = "GenomeResearch_2021_PhyloMap_Pp.xls" )
+               destfile = "GenomeResearch_2021_PhyloMap_Pp.xlsx" )
 
 download.file( url      = "https://genome.cshlp.org/content/suppl/2021/08/23/gr.275303.121.DC1/Supplemental_Table_S6.xlsx", 
-               destfile = "GenomeResearch_2021_PhyloMap_Ce.xls" )
+               destfile = "GenomeResearch_2021_PhyloMap_Ce.xlsx" )
 
 ```
 
 Read the *.xls file storing the Phylostratigraphic Maps and Divergence Maps and format it for the use with myTAI:
 
 ```r
+# install the readxl package
+install.packages("readxl")
 
+# load package readxl
+library(readxl)
+
+# read the excel file
+PpacificusPhyloMap <- read_excel("GenomeResearch_2021_PhyloMap_Pp.xlsx", sheet = 1, skip = 1)
+
+# have a look at the final format
+head(PpacificusPhyloMap)
 ```
 
 ## [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)

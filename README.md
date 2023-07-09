@@ -70,6 +70,7 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 - _Perinereis aibuhitensis_ (sand worm)
   - [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](#xu-f-domazet-lošo-t-fan-d-dunwell-tl-li-l-fang-x-zhang-g-2016)
 - _Caenorhabditis elegans_
+  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2023](#shuai-sun-christian-roedelsperger-ralf-j-sommer-2021)
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Echinococcus granulosus_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
@@ -997,6 +998,18 @@ Sandworm.PhyloMap
 ```
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Xu et al., 2016](http://www.nature.com/articles/srep34664) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
+
+## [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121)
+
+__Title__: _Single worm transcriptomics identifies a developmental core network of oscillating genes with deep conservation across nematodes_
+
+Published `Phylostratigraphic Map`:
+
+- __Organisms__: _Caenorhabditis elegans_, _Pristionchus pacificus_
+- __E-value cutoff__: 1E-3 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: WormBase (protein)
+- __Splice variants__: longest isoform
 
 ## [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)
 

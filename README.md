@@ -70,10 +70,10 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 - _Perinereis aibuhitensis_ (sand worm)
   - [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](#xu-f-domazet-lošo-t-fan-d-dunwell-tl-li-l-fang-x-zhang-g-2016)
 - _Caenorhabditis elegans_
-  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](#shuai-sun-christian-roedelsperger-ralf-j-sommer-2021)
+  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](#shuai-sun-christian-roedelsperger--ralf-j-sommer-2021)
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Pristionchus pacificus_
-  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](#shuai-sun-christian-roedelsperger-ralf-j-sommer-2021)
+  - [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](#shuai-sun-christian-roedelsperger--ralf-j-sommer-2021)
 - _Echinococcus granulosus_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Octopus vulgaris_

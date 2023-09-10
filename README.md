@@ -43,7 +43,7 @@ __If your study recently published a phylostratigraphic map or sequence divergen
 The following studies include published `Phylostratigraphic Maps` and `Divergence Maps` based on similar approaches, but using different parameter sets.
 This collection aims to store all published maps and furthermore, provides scripts for easy data retrieval to be able to integrate corresponding maps into a phylostranscriptomics workflow with [myTAI](https://github.com/HajkD/myTAI).
 
-The [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) Vignette introduces the integration of the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom phylotranscriptomic analyses.
+The [Introduction to Phylotranscriptomics](https://drostlab.github.io/myTAI/articles/Introduction.html) Vignette introduces the integration of the following `Phylostratigraphic Maps` and `Divergence Maps` to perform custom phylotranscriptomic analyses.
 
 __Note: some of the phylostratigraphic maps are now retrievable via the R data package, [`phylomapr`](https://github.com/LotharukpongJS/phylomapr). More will be added in the near future.__
 

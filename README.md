@@ -53,6 +53,7 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2008](#tomislav-domazet-lošo-and-diethard-tautz-2008)
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2010](#tomislav-domazet-lošo-and-diethard-tautz-2010)
   - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
+  - [Jaruwatana Sodai Lotharukpong (unpublished)](#jaruwatana-s-lotharukpong-unpublished)
 - _Drosophila melanogaster_
   - [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](#martin-sebastijan-šestak-and-tomislav-domazet-lošo-2015)
   - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
@@ -1079,7 +1080,7 @@ Published `Phylostratigraphic Map`:
 - __Reference data bases__: NCBI nr (protein)
 - __Splice variants__: always using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
 
-This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomie-ID were used.
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomic-ID were used.
 
 ```
 # Fungi
@@ -1134,7 +1135,7 @@ download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186
                destfile = "Barrera-Redondo_2023_Maps_plant.xlsx" )
 ```
 
-Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for use with [myTAI](https://github.com/HajkD/myTAI):
 
 ```r
 # load package readxl
@@ -1490,7 +1491,7 @@ Published `Phylostratigraphic Map`:
 - __Reference data bases__: NCBI nr (protein)
 - __Splice variants__: always using the longest isoform when available
 
-This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomie-ID were used.
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomic-ID were used.
 
 ```
 50956	Geosiphon pyriformis
@@ -1598,4 +1599,33 @@ Radiomyces_spectabilis.PhyloMap <-
     Phylostratum = rank,
     GeneID
   )
+```
+
+## [Jaruwatana S Lotharukpong (unpublished)](https://lotharukpongjs.github.io/phylomapr/reference/Homo_sapiens.PhyloMap.html)
+
+Unpublished `Phylostratigraphic Map`:
+
+- __Organisms__: _Homo sapiens_
+- __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences; sensitive mode)
+- __Sequence type__: Protein Sequences
+- __Reference data bases__: NCBI nr (protein)
+- __Splice variants__: using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
+
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomic-ID was used:
+
+```
+9606	Homo sapiens
+```
+
+```r
+# install phylomapr
+
+devtools::install_github("LotharukpongJS/phylomapr")
+
+# load package phylomapr
+library(phylomapr)
+
+### Phylostratigraphic Maps
+# Homo sapiens
+Homo_sapiens.PhyloMap <- phylomapr::Homo_sapiens.PhyloMap
 ```

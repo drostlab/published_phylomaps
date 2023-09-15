@@ -1135,7 +1135,7 @@ download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186
                destfile = "Barrera-Redondo_2023_Maps_plant.xlsx" )
 ```
 
-Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
+Read the `*.xlsx` file storing the `Phylostratigraphic Maps` and format it for use with [myTAI](https://github.com/HajkD/myTAI):
 
 ```r
 # load package readxl
@@ -1609,9 +1609,9 @@ Unpublished `Phylostratigraphic Map`:
 - __E-value cutoff__: 1E-5 ([DIAMOND](https://github.com/bbuchfink/diamond); protein sequences; sensitive mode)
 - __Sequence type__: Protein Sequences
 - __Reference data bases__: NCBI nr (protein)
-- __Splice variants__: always using the longest isoform when available
+- __Splice variants__: using the representative sequences from UniProt (under "Download one protein sequence per gene (FASTA)")
 
-This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). NCBI Taxonomic-ID were used: 9606
+This study used [GenEra](https://github.com/josuebarrera/GenEra) for gene age inference (phylostratigraphy). The following NCBI Taxonomic-ID was used:
 
 ```
 9606	Homo sapiens

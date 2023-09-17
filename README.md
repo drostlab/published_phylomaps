@@ -47,7 +47,12 @@ The [Introduction to Phylotranscriptomics](https://drostlab.github.io/myTAI/arti
 
 __Note: some of the phylostratigraphic maps are now retrievable via the R data package, [`phylomapr`](https://github.com/LotharukpongJS/phylomapr). More will be added in the near future.__
 
+
 ## Table of Contents
+
+> __Please be aware that GeneIDs present in the respective phylomaps may not match the IDs of your corresponding gene expression dataset. If this is the case, you can try to convert IDs using [biomartr](https://github.com/ropensci/biomartr/#install-developer-version) and following [this tutorial](https://docs.ropensci.org/biomartr/articles/Functional_Annotation.html#organism-specific-retrieval-of-information) (please see also conversion example for unpublished Human phylomap).__
+
+
 **Animals**
 - _Homo sapiens_
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2008](#tomislav-domazet-lošo-and-diethard-tautz-2008)
@@ -1629,3 +1634,61 @@ library(phylomapr)
 # Homo sapiens
 Homo_sapiens.PhyloMap <- phylomapr::Homo_sapiens.PhyloMap
 ```
+
+Users can also convert the `UniProtKB` ids present in this human phylomap
+to ENSEMBL gene ids using [biomartr](https://docs.ropensci.org/biomartr/articles/Functional_Annotation.html#organism-specific-retrieval-of-information):
+
+
+```r
+# install biomartr
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install("ropensci/biomartr")
+
+# map UniProtKB IDs to ENSEMBL gene ids
+result_BM <-
+  biomartr::biomart(
+    genes      = unlist(lapply(Homo_sapiens.PhyloMap$GeneID, function(x)
+      unlist(stringr::str_split(x, "[|]"))[2]))
+    ,
+    # genes were retrieved using biomartr::getGenome()
+    mart       = "ENSEMBL_MART_ENSEMBL",
+    # marts were selected with biomartr::getMarts()
+    dataset    = "hsapiens_gene_ensembl",
+    # datasets were selected with biomartr::getDatasets()
+    attributes = c("ensembl_gene_id", "ensembl_peptide_id"),
+    # attributes were selected with biomartr::getAttributes()
+    filters    = "uniprot_gn_id"
+  ) # specify what ID type was stored in the fasta file retrieved with biomartr::getGenome()
+
+# save results
+# readr::write_tsv(result_BM, "Human_GeneIDs.tsv")
+
+# transform to tibble
+result_BM <- tibble::as_tibble(result_BM)
+
+# import phylomapr
+Homo_sapiens <- tibble::as_tibble(phylomapr::Homo_sapiens.PhyloMap)
+# add uniprot_gn_id to PhyloMap
+Homo_sapiens <-
+  dplyr::mutate(Homo_sapiens, uniprot_gn_id = unlist(lapply(Homo_sapiens$GeneID, function(x)
+    unlist(stringr::str_split(x, "[|]"))[2])))
+
+# join phylomap with biomartr ENSEMBL ids
+Homo_sapiens_joined <-
+  dplyr::inner_join(Homo_sapiens, result_BM, by = "uniprot_gn_id")
+
+# select the lowest (= oldest) Phylostratum value for each enselbl_gene_id
+Homo_sapiens_joined_filtered <-
+  dplyr::group_by(Homo_sapiens_joined, ensembl_gene_id) |> dplyr::summarise(Phylostratum = min(Phylostratum))
+
+names(Homo_sapiens_joined_filtered)[1] <- "GeneID"
+# format map
+Homo_sapiens_phylomap <- Homo_sapiens_joined_filtered[c(2,1)]
+# store new Human phylomap containing ENSEMBL gene ids
+readr::write_tsv(Homo_sapiens_phylomap, "Human_Phylomap.tsv")
+```
+
+
+

@@ -1326,6 +1326,15 @@ Mus_musculus.PhyloMap <-
     GeneID = `#gene`
   ) %>%
   dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
+  
+# Converting UniProtKB ids into ENSEMBL gene ids
+
+Mus_musculus.PhyloMap_ENSEMBL <- phylomapr::convertID(
+  phylomap = Mus_musculus.PhyloMap,
+  mart = "ENSEMBL_MART_ENSEMBL",
+  dataset = "mmusculus_gene_ensembl",
+  filters = "uniprot_gn_id"
+)
 
 #	Japanese sea cucumber
 Apostichopus_japonicus.data <- 

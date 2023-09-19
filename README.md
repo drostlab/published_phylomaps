@@ -58,7 +58,7 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2008](#tomislav-domazet-lošo-and-diethard-tautz-2008)
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2010](#tomislav-domazet-lošo-and-diethard-tautz-2010)
   - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
-  - [Jaruwatana Sodai Lotharukpong (unpublished)](#jaruwatana-s-lotharukpong-unpublished)
+  - [Jaruwatana Sodai Lotharukpong, 2023 (unpublished)](#jaruwatana-s-lotharukpong-2023-unpublished)
 - _Drosophila melanogaster_
   - [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](#martin-sebastijan-šestak-and-tomislav-domazet-lošo-2015)
   - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
@@ -1615,7 +1615,7 @@ Radiomyces_spectabilis.PhyloMap <-
   )
 ```
 
-## [Jaruwatana S Lotharukpong (unpublished)](https://lotharukpongjs.github.io/phylomapr/reference/Homo_sapiens.PhyloMap.html)
+## [Jaruwatana S Lotharukpong, 2023 (unpublished)](https://lotharukpongjs.github.io/phylomapr/reference/Homo_sapiens.PhyloMap.html)
 
 Unpublished `Phylostratigraphic Map`:
 

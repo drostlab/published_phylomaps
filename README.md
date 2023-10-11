@@ -52,8 +52,10 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 
 > __Please be aware that GeneIDs present in the respective phylomaps may not match the IDs of your corresponding gene expression dataset. If this is the case, you can try to convert IDs using [biomartr](https://github.com/ropensci/biomartr/#install-developer-version) and following [this tutorial](https://docs.ropensci.org/biomartr/articles/Functional_Annotation.html#organism-specific-retrieval-of-information) (please see also conversion example for unpublished Human phylomap).__
 
+<details>
 
-**Animals**
+<summary>Animals</summary>
+
 - _Homo sapiens_
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2008](#tomislav-domazet-lošo-and-diethard-tautz-2008)
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2010](#tomislav-domazet-lošo-and-diethard-tautz-2010)
@@ -98,7 +100,11 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 - _Amphimedon queenslandica_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 
-**Plants**
+</details>
+
+<details>
+<summary>Plants</summary>
+
 - _Arabidopsis thaliana_
   - [Marcel Quint, Hajk-Georg Drost, Alexander Gabel, Kristian Karsten Ullrich, Markus Boenn, Ivo Grosse, 2012](#marcel-quint-hajk-georg-drost-alexander-gabel-kristian-karsten-ullrichmarkus-boenn-ivo-grosse-2012)
   - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
@@ -122,7 +128,11 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 - _Marchantia polymorpha_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 
-**Fungi**
+</details>
+
+<details>
+<summary>Fungi</summary>
+
 - _Coprinopsis cinerea_ (gray shag)
   - [Xuanjin Cheng, Jerome Ho Lam Hui, Yung Yung Lee, Patrick Tik Wan Law and Hoi Shan Kwan, 2015](#xuanjin-cheng-jerome-ho-lam-hui-yung-yung-lee-patrick-tik-wan-law-and-hoi-shan-kwan-2015)
 - _Saccharomyces cerevisiae_
@@ -160,7 +170,15 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 - _Phycomyces blakesleeanus_
   - [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](#bethan-f-manley-jaruwatana-s-lotharukpong-josué-barrera-redondo-theo-llewellyn-gokalp-yildirir-jana-sperschneider-nicolas-corradi-uta-paszkowski-eric-a-miska-alexandra-dallaire-2023)
 
-## [Tomislav Domazet-Lošo, Josip Brajković, Diethard Tautz, 2007](http://www.sciencedirect.com/science/article/pii/S0168952507002995)
+</details>
+
+## Phylomaps
+
+### [Tomislav Domazet-Lošo, Josip Brajković, Diethard Tautz, 2007](http://www.sciencedirect.com/science/article/pii/S0168952507002995)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _A phylostratigraphy approach to uncover the genomic history of major adaptations in metazoan lineages_
 
@@ -175,8 +193,13 @@ Published `Phylostratigraphic Map`:
 
 __Data sets are not available as Supplementary Tables.__
 
+</details>
 
-## [Tomislav Domazet-Lošo and Diethard Tautz, 2008](http://mbe.oxfordjournals.org/content/25/12/2699)
+### [Tomislav Domazet-Lošo and Diethard Tautz, 2008](http://mbe.oxfordjournals.org/content/25/12/2699)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _An Ancient Evolutionary Origin of Genes Associated with Human Genetic Diseases_
 
@@ -236,9 +259,13 @@ head(HomoSapiens.PhyloMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Map` of Homo sapiens from [Domazet-Lošo and Tautz, 2008](http://mbe.oxfordjournals.org/content/25/12/2699) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+</details>
 
+### [Tomislav Domazet-Lošo and Diethard Tautz, 2010](http://www.biomedcentral.com/1741-7007/8/66)
 
-## [Tomislav Domazet-Lošo and Diethard Tautz, 2010](http://www.biomedcentral.com/1741-7007/8/66)
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _Phylostratigraphic tracking of cancer genes suggests a link to the emergence of multicellularity in metazoa_
 
@@ -294,8 +321,13 @@ head(HomoSapiens.PhyloMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Map` of Homo sapiens from [Domazet-Lošo and Tautz, 2010](http://www.biomedcentral.com/1741-7007/8/66) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+</details>
 
-## [Marcel Quint, Hajk-Georg Drost, Alexander Gabel, Kristian Karsten Ullrich,	Markus Boenn, Ivo Grosse, 2012](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html)
+### [Marcel Quint, Hajk-Georg Drost, Alexander Gabel, Kristian Karsten Ullrich,	Markus Boenn, Ivo Grosse, 2012](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _A transcriptomic hourglass in plant embryogenesis_
 
@@ -362,8 +394,7 @@ download.file( url      = "https://static-content.springer.com/esm/art%3A10.1038
                destfile = "Nature_2012_Arabidopsis_thaliana_KaKsMaps.xls" )
 ```    
 
-
-### _Arabidopsis thaliana_ versus _Arabidopsis lyrata_
+#### _Arabidopsis thaliana_ versus _Arabidopsis lyrata_
 
 ```r
 # install the readxl package
@@ -392,7 +423,7 @@ head(Ath_vs_Aly.KaKsMap)
 6 0.23650 At5g20040
 ```
 
-### _Arabidopsis thaliana_ versus _Brassica rapa_
+#### _Arabidopsis thaliana_ versus _Brassica rapa_
 
 ```r
 # install the readxl package
@@ -423,7 +454,7 @@ head(Ath_vs_Bra.KaKsMap)
 
 
 
-### _Arabidopsis thaliana_ versus _Capsella rubella_
+#### _Arabidopsis thaliana_ versus _Capsella rubella_
 
 ```r
 # install the readxl package
@@ -452,7 +483,7 @@ head(Ath_vs_Crub.KaKsMap)
 6 0.27210 At1g01060
 ```
 
-### _Arabidopsis thaliana_ versus _Thelungiella halophila_
+#### _Arabidopsis thaliana_ versus _Thelungiella halophila_
 
 ```r
 # install the readxl package
@@ -483,8 +514,13 @@ head(Ath_vs_Thal.KaKsMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Map` and `KaKs Maps` of Arabidopsis thaliana from [Quint et al., 2012](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+</details>
 
-## [Rafik Neme and Diethard Tautz, 2013](http://www.biomedcentral.com/1471-2164/14/117)
+### [Rafik Neme and Diethard Tautz, 2013](http://www.biomedcentral.com/1471-2164/14/117)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _Phylogenetic patterns of emergence of new genes support a model of frequent de novo evolution_
 
@@ -509,7 +545,8 @@ download.file( url      = "https://static-content.springer.com/esm/art%3A10.1186
 
 Read the `*.xlsx` file storing the `Phylostratigraphic Maps` of _Mus musculus_, _Homo sapiens_, _Danio rerio_, and _Gasterosteus aculeatus_ and format it for the use with [myTAI](https://github.com/HajkD/myTAI):
 
-### _Mus musculus_
+#### _Mus musculus_
+
 ```r
 # install the readxl package
 install.packages("readxl")
@@ -537,7 +574,7 @@ head(MusMusculus.PhyloMap)
 6                   1 ENSMUSG00000004789
 ```
 
-### _Homo sapiens_
+#### _Homo sapiens_
 
 ```r
 
@@ -561,7 +598,7 @@ head(HomoSapiens.PhyloMap)
 6                   1 ENSG00000002587
 ```
 
-### _Danio rerio_
+#### _Danio rerio_
 
 ```r
 
@@ -585,7 +622,7 @@ head(DanioRerio.PhyloMap)
 6                   1 ENSDARG00000000472
 ```
 
-### _Gasterosteus aculeatus_
+#### _Gasterosteus aculeatus_
 
 ```r
 
@@ -611,7 +648,13 @@ head(GasterosteusAculeatus.PhyloMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` of the aforementioned species from [Neme and Tautz, 2013](http://www.biomedcentral.com/1471-2164/14/117) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
-## [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](http://mbe.oxfordjournals.org/content/32/2/299.short)
+</details>
+
+### [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](http://mbe.oxfordjournals.org/content/32/2/299.short)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _Phylostratigraphic Profiles in Zebrafish Uncover Chordate Origins of the Vertebrate Brain_
 
@@ -695,8 +738,13 @@ head(Dmelanogaster.PhyloMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` of the aforementioned species from [Šestak and Domazet-Lošo, 2015](http://mbe.oxfordjournals.org/content/32/2/299.short) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+</details>
 
-## [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](http://mbe.oxfordjournals.org/content/32/5/1221.short?rss=1)
+### [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](http://mbe.oxfordjournals.org/content/32/5/1221.short?rss=1)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _Evidence for Active Maintenance of Phylotranscriptomic Hourglass Patterns in Animal and Plant Embryogenesis_
 
@@ -842,8 +890,13 @@ Ath_Cpapaya_DivergenceExpressionSet <- read_excel("MBE_2015b_DivergenceMaps.xls"
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `Divergence Maps` of the aforementioned species from [Drost et al., 2015](http://mbe.oxfordjournals.org/content/32/5/1221.short?rss=1) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
+</details>
 
-## [Xuanjin Cheng, Jerome Ho Lam Hui, Yung Yung Lee, Patrick Tik Wan Law and Hoi Shan Kwan, 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047)
+### [Xuanjin Cheng, Jerome Ho Lam Hui, Yung Yung Lee, Patrick Tik Wan Law and Hoi Shan Kwan, 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _A “Developmental Hourglass” in Fungi_
 
@@ -935,7 +988,13 @@ head(Ccin_vs_Abisp.KaKsMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `KaKs Maps` of the aforementioned species from [Cheng et al., 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
-## [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](http://www.nature.com/articles/srep34664)
+</details>
+
+### [Xu F, Domazet-Lošo T, Fan D, Dunwell TL, Li L, Fang X, Zhang G., 2016](http://www.nature.com/articles/srep34664)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _High expression of new genes in trochophore enlightening the ontogeny and evolution of trochozoans_
 
@@ -1010,7 +1069,13 @@ Sandworm.PhyloMap
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Xu et al., 2016](http://www.nature.com/articles/srep34664) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
-## [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121)
+</details>
+
+### [Shuai Sun, Christian Roedelsperger & Ralf J. Sommer, 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _Single worm transcriptomics identifies a developmental core network of oscillating genes with deep conservation across nematodes_
 
@@ -1070,7 +1135,13 @@ head(CelegansPhyloMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps`  of the aforementioned species from [Sun et al., 2021](https://genome.cshlp.org/content/early/2021/07/22/gr.275303.121) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
-## [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)
+</details>
+
+### [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-02895-z)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _Uncovering gene-family founder events during major evolutionary transitions in animals, plants and fungi using GenEra_
 
@@ -1493,7 +1564,13 @@ Marchantia_polymorpha.PhyloMap <-
   dplyr::mutate(Phylostratum = as.numeric(Phylostratum))
 ```
 
-## [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](https://academic.oup.com/g3journal/article/13/6/jkad077/7097621)
+</details>
+
+### [Bethan F Manley, Jaruwatana S Lotharukpong, Josué Barrera-Redondo, Theo Llewellyn, Gokalp Yildirir, Jana Sperschneider, Nicolas Corradi, Uta Paszkowski, Eric A Miska, Alexandra Dallaire, 2023](https://academic.oup.com/g3journal/article/13/6/jkad077/7097621)
+
+<details>
+
+<summary>Open here</summary>
 
 __Title__: _A highly contiguous genome assembly reveals sources of genomic novelty in the symbiotic fungus Rhizophagus irregularis_
 
@@ -1615,7 +1692,13 @@ Radiomyces_spectabilis.PhyloMap <-
   )
 ```
 
-## [Jaruwatana S Lotharukpong, 2023 (unpublished)](https://lotharukpongjs.github.io/phylomapr/reference/Homo_sapiens.PhyloMap.html)
+</details>
+
+### [Jaruwatana S Lotharukpong, 2023 (unpublished)](https://lotharukpongjs.github.io/phylomapr/reference/Homo_sapiens.PhyloMap.html)
+
+<details>
+
+<summary>Open here</summary>
 
 Unpublished `Phylostratigraphic Map`:
 
@@ -1662,4 +1745,4 @@ Homo_sapiens.PhyloMap.ENSEMBL <- phylomapr::convertID(
 )
 ```
 
-
+</details>

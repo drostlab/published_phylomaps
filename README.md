@@ -52,9 +52,7 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 
 > __Please be aware that GeneIDs present in the respective phylomaps may not match the IDs of your corresponding gene expression dataset. If this is the case, you can try to convert IDs using [biomartr](https://github.com/ropensci/biomartr/#install-developer-version) and following [this tutorial](https://docs.ropensci.org/biomartr/articles/Functional_Annotation.html#organism-specific-retrieval-of-information) (please see also conversion example for unpublished Human phylomap).__
 
-<details>
-
-<summary>Animals</summary>
+**Animals**
 
 - _Homo sapiens_
   - [Tomislav Domazet-Lošo and Diethard Tautz, 2008](#tomislav-domazet-lošo-and-diethard-tautz-2008)
@@ -65,6 +63,10 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
   - [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](#martin-sebastijan-šestak-and-tomislav-domazet-lošo-2015)
   - [Hajk-Georg Drost, Alexander Gabel, Ivo Grosse, Marcel Quint, 2015](#hajk-georg-drost-alexander-gabel-ivo-grosse-marcel-quint-2015)
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+
+<details>
+<summary>Click here to see more animals</summary>
+
 - _Danio rerio_
   - [Rafik Neme and Diethard Tautz, 2013](#rafik-neme-and-diethard-tautz-2013)
   - [Martin Sebastijan Šestak and Tomislav Domazet-Lošo, 2015](#martin-sebastijan-šestak-and-tomislav-domazet-lošo-2015)
@@ -102,8 +104,7 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 
 </details>
 
-<details>
-<summary>Plants</summary>
+**Plants**
 
 - _Arabidopsis thaliana_
   - [Marcel Quint, Hajk-Georg Drost, Alexander Gabel, Kristian Karsten Ullrich, Markus Boenn, Ivo Grosse, 2012](#marcel-quint-hajk-georg-drost-alexander-gabel-kristian-karsten-ullrichmarkus-boenn-ivo-grosse-2012)
@@ -111,6 +112,10 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Glycine max_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+
+<details>
+<summary>Click here to see more plants</summary>
+
 - _Solanum lycopersicum_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Oryza sativa_
@@ -130,13 +135,16 @@ __Note: some of the phylostratigraphic maps are now retrievable via the R data p
 
 </details>
 
-<details>
-<summary>Fungi</summary>
+**Fungi**
 
 - _Coprinopsis cinerea_ (gray shag)
   - [Xuanjin Cheng, Jerome Ho Lam Hui, Yung Yung Lee, Patrick Tik Wan Law and Hoi Shan Kwan, 2015](#xuanjin-cheng-jerome-ho-lam-hui-yung-yung-lee-patrick-tik-wan-law-and-hoi-shan-kwan-2015)
 - _Saccharomyces cerevisiae_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
+
+<details>
+<summary>Click here to see more fungi</summary>
+
 - _Schizosaccharomyces pombe_
   - [Josué Barrera-Redondo, Jaruwatana Sodai Lotharukpong, Hajk-Georg Drost & Susana M. Coelho, 2023](#josué-barrera-redondo-jaruwatana-sodai-lotharukpong-hajk-georg-drost--susana-m-coelho-2023)
 - _Aspergillus niger_
